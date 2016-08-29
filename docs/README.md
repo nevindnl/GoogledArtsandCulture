@@ -2,7 +2,7 @@
 
 [Heroku][heroku]
 
-[heroku]: http://www.googled.herokuapp.com
+[heroku]: https://www.googled.herokuapp.com
 
 ## Minimum Viable Product
 
