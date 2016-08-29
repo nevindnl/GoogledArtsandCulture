@@ -59,7 +59,7 @@ the API.
 - [ ] Seed database with a small amount of test data
 - [ ] CRUD API for images (`ImagesController`)
 - [ ] JBuilder views for images
-- Image components (`ImageIndex`, `ImageIndexItem`, `ImageForm`) and respective Redux loops
+- [ ] Image components (`ImageIndex`, `ImageIndexItem`, `ImageForm`) and respective Redux loops
 - [ ] Style images components
 - [ ] Seed images
 
