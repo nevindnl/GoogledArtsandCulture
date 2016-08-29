@@ -17,7 +17,7 @@
   0. `DELETE /api/session` is called.
   0. `removeCurrentUser` is set as the success callback.
 * `fetchCurrentUser`
-  0. invoked from `App` in `didMount`
+  0. invoked from `App` in `onEnter`
   0. `GET /api/session` is called.
   0. `receiveCurrentUser` is set as the success callback.
 

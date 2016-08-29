@@ -54,13 +54,13 @@ Googled Arts and Culture is a web application, inspired by Google Arts and Cultu
 - [ ] JBuilder views for images
 - [ ] Image components (`ImageIndex`, `ImageIndexItem`) and respective Redux loops
 - [ ] Style images components
-- [ ] Seed images
+- [ ] Seed images on cloudinary
 
 ### Phase 3: Collections (2 days)
 
 **Objective:** Images belong to Collections that can be created, read, edited and destroyed through the API.
 
-- [ ] `Collection` model and `Collects` join table
+- [ ] `Collection` model and `CollectedImages` join table
 - [ ] Seed database with a small amount of test data
 - [ ] CRUD API for collections (`CollectionsController`)
 - [ ] JBuilder views for collections

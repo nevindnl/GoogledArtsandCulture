@@ -29,9 +29,11 @@
 ### Collections
 
 - `GET /api/collections`
+  - Get one image per collection
 - `POST /api/collections`
 - `DELETE /api/collections/:id`
 - `GET /api/collections/:id/`
+  - Get all images for collection
 
 ### Favorites
 

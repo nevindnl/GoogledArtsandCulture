@@ -32,7 +32,7 @@ id             | integer   | not null, primary key
 image_id       | integer   | not null, foreign key (references images), indexed
 user_id        | integer   | not null, foreign key (references users), indexed
 
-## collects
+## collected_images
 column name    | data type | details
 ---------------|-----------|-----------------------
 id             | integer   | not null, primary key
