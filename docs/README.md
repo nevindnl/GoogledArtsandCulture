@@ -59,10 +59,7 @@ the API.
 - [ ] Seed database with a small amount of test data
 - [ ] CRUD API for images (`ImagesController`)
 - [ ] JBuilder views for images
-- Image components and respective Redux loops
-  - [ ] `ImageIndex`
-  - [ ] `ImageIndexItem`
-  - [ ] `ImageForm`
+- Image components (`ImageIndex`, `ImageIndexItem`, `ImageForm`) and respective Redux loops
 - [ ] Style images components
 - [ ] Seed images
 
@@ -86,7 +83,6 @@ the API.
 
 - [ ] Fetching favorited images
 - [ ] Favoriting images
-
 - [ ] `Tag` model and `Taggings` join table
 - [ ] Fetching tags for images
 - [ ] Adding tags to images
