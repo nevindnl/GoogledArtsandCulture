@@ -1,3 +1,4 @@
+```json
 {
   currentUser: {
     id: 1,
@@ -30,3 +31,4 @@
   }
   tagFilters: [1, 7, 14]
 }
+```

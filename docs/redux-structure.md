@@ -110,7 +110,7 @@
 ## SearchSuggestion Cycles
 
 * `fetchSearchSuggestions`
-  0. invoked from `SearchBar` `onChange` when there is text
+  0. invoked from `Search` `onChange` when there is text
   0. `GET /api/images` is called with `text` param.
   0. `receiveSearchSuggestions` is set as the success callback.
 
@@ -119,7 +119,7 @@
   0. The `SearchSuggestion` reducer updates `suggestions` in the application's state.
 
 * `removeSearchSuggestions`
-  0. invoked from `ImageSearchBar` `onChange` when empty
+  0. invoked from `Search` `onChange` when empty
   0. The `SearchSuggestion` reducer resets `suggestions` in the application's state.
 
 ## Favorite Cycles

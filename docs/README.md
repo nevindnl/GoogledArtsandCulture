@@ -1,6 +1,6 @@
 # Googled Arts and Culture
 
-[Heroku link][heroku]
+[Heroku][heroku]
 
 [heroku]: http://www.googled.herokuapp.com
 
@@ -14,7 +14,6 @@ Googled Arts and Culture is a web application, inspired by Google Arts and Cultu
 - [ ] Collections for images
 - [ ] Favorites/Tags
 - [ ] Hi-res zoom
-- [ ] Production README [sample](docs/production_readme.md)
 
 ## Design Docs
 * [View Wireframes][wireframes]
@@ -53,7 +52,7 @@ Googled Arts and Culture is a web application, inspired by Google Arts and Cultu
 - [ ] `Image` model
 - [ ] Seed database with a small amount of test data
 - [ ] JBuilder views for images
-- [ ] Image components (`ImageIndex`, `ImageIndexItem`, `ImageForm`) and respective Redux loops
+- [ ] Image components (`ImageIndex`, `ImageIndexItem`) and respective Redux loops
 - [ ] Style images components
 - [ ] Seed images
 
@@ -91,5 +90,4 @@ Googled Arts and Culture is a web application, inspired by Google Arts and Cultu
 **Objective:** Perfect CSS.
 
 ### Bonus Features (TBD)
-- [ ] Search images
 - [ ] Organize by popularity, date, color
