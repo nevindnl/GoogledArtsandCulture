@@ -10,9 +10,9 @@ Googled Arts and Culture is a web application, inspired by Google Arts and Cultu
 
 - [ ] Hosting on Heroku
 - [ ] New account creation and login
-- [ ] Image CRUD
-- [ ] Collections for images
-- [ ] Favorites/Tags
+- [ ] Favorites
+- [ ] Collections CRUD
+- [ ] Search by tags, name
 - [ ] Hi-res zoom
 
 ## Design Docs
