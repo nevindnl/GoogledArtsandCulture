@@ -27,6 +27,7 @@
       title: "Redux",
       author_id: 1,
       description: "is cool",
+      photoIds: [1,2,3]
     }
   }
   tagFilters: [1, 7, 14]
