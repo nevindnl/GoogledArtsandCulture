@@ -18,9 +18,8 @@ class AppRouter extends React.Component{
 	render(){
 		return (
 	    <Router history={hashHistory}>
+				<Route path='/addSession' component={AuthForm} />
 	      <Route path='/' component={App}>
-	        <Route path='login' component={AuthForm} />
-	        <Route path='signup' component={AuthForm} />
 	      </Route>
 	    </Router>
 	  );

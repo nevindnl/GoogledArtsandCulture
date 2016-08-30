@@ -9,11 +9,6 @@ class AuthForm extends React.Component{
     };
   }
 
-  handleSubmit(e){
-    e.preventDefault();
-    this.props.processForm({user: this.state});
-	}
-
 	componentDidUpdate(){
 		if (this.props.currentUser){
       this.props.router.push('/');
@@ -26,12 +21,15 @@ class AuthForm extends React.Component{
 
   render(){
     return (
-      <div>
-        <h1>{this.props.formType}</h1>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <input type='text' placeholder='username' value={this.state.username} onChange={this.update('username')}/>
-          <input type='password' placeholder='password' value={this.state.password} onChange={this.update('password')}/>
-          <input type='submit' value="Submit"/>
+      <div className='auth_form'>
+        <h4> Googled </h4>
+        <h6> Sign in with your Googled account </h6>
+
+        <form>
+          <input type='text' placeholder='Username' value={this.state.username} onChange={this.update('username')}/>
+          <input type='password' placeholder='Password' value={this.state.password} onChange={this.update('password')}/>
+          <button onClick={() => this.props.signup({user: this.state})}>Sign Up</button>
+          <button onClick={() => this.props.login({user: this.state})}>Login</button>
         </form>
       </div>
     );

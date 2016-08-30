@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "postinstall" : "./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,10 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nevindnl/GoogledArtsandCulture/issues"
+  },
+  "engines": {
+    "node": "6.2.1",
+    "npm": "3.9.3"
   },
   "homepage": "https://github.com/nevindnl/GoogledArtsandCulture#readme",
   "dependencies": {

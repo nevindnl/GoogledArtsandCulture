@@ -10,9 +10,8 @@ const Header = ({currentUser, logout, router}) => {
     );
   } else {
     return (
-      <div>
-        <button onClick={() => router.push('signup')}>Signup</button>
-        <button onClick={() => router.push('login')}>Login</button>
+      <div className='header group'>
+        <button id='sign_in' onClick={() => router.push('/addSession')}>SIGN IN</button>
       </div>
     );
   }
