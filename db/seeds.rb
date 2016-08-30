@@ -6,7 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(username: apple, password: apples)
-User.create!(username: banana, password: bananas)
-User.create!(username: orange, password: oranges)
-User.create!(username: watermelon, password: watermelons)
+User.create!(username: 'apple', password: 'apples')
+User.create!(username: 'banana', password: 'bananas')
+User.create!(username: 'orange', password: 'oranges')
+User.create!(username: 'watermelon', password: 'watermelons')
+
+Image.create!(title: 'apple', url: 'apple.com')
+Image.create!(title: 'orange', url: 'orange.com')
