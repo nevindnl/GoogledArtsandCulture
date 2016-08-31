@@ -1,10 +1,14 @@
 class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
-  validates :password, length: {minimum: 6, allow_nil: true}
+  validates :password, length: {minimum: 6}
 
   after_initialize :ensure_session_token
 
   attr_reader :password
+
+  has_many :favorites, dependent: :destroy
+  has_many :images, through: :favorites
+  has_many :collections, dependent: :destroy
 
   def self.find_by_credentials username, password
     @user = User.find_by_username(username)

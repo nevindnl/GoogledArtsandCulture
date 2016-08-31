@@ -2,7 +2,7 @@ import React from 'react';
 
 const ImageItem = ({image}) => (
   <li>
-    {image.title}
+    <img src={image.url}></img>
   </li>
 );
 

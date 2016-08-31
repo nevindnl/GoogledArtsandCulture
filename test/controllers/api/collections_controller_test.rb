@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CollectionsControllerTest < ActionController::TestCase
+class Api::CollectionsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

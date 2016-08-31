@@ -4,6 +4,7 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app';
 import AuthForm from './auth_form/auth_form_container';
 import {requestImages} from '../actions/images_actions';
+import {requestCollections} from '../actions/collections_actions';
 
 class AppRouter extends React.Component{
 	constructor(props){
@@ -16,11 +17,16 @@ class AppRouter extends React.Component{
     }
   }
 
+	_home(){
+		this.context.store.dispatch(requestImages());
+		this.context.store.dispatch(requestCollections());
+	}
+
 	render(){
 		return (
 	    <Router history={hashHistory}>
 				<Route path='/addSession' component={AuthForm} />
-	      <Route path='/' component={App} onEnter={() => this.context.store.dispatch(requestImages())}>
+	      <Route path='/' component={App} onEnter={this._home.bind(this)}>
 	      </Route>
 	    </Router>
 	  );

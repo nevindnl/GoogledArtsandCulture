@@ -2,15 +2,18 @@ import React from 'react';
 
 import ImageItem from './image_item';
 
-const Images = ({images}) => {
+const Images = ({images, header}) => {
   const imageItems = images.map(image => (
     <ImageItem image={image} key={image.id} />
   ));
 
   return (
-    <ul className='images'>
-      {imageItems}
-    </ul>
+    <div className='images_container'>
+      <h3>{header}</h3>
+      <ul className='images'>
+        {imageItems}
+      </ul>
+    </div>
   );
 };
 

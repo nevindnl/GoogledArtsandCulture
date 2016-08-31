@@ -20,11 +20,17 @@ class AuthForm extends React.Component{
   }
 
   render(){
+    const errors = this.props.errors.map((error, i) => (
+      <li key={i}>
+        {error}
+      </li>
+    ));
+
     return (
       <div className='auth_form'>
-        <h4> Googled </h4>
-        <h6> Sign in with your Googled account </h6>
-
+        <h4>Googled</h4>
+        <h6>Sign in with your Googled account</h6>
+        <ul>{errors}</ul>
         <form>
           <input type='text' placeholder='Username' value={this.state.username} onChange={this.update('username')}/>
           <input type='password' placeholder='Password' value={this.state.password} onChange={this.update('password')}/>

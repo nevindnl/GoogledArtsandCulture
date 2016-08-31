@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack",
-    "postinstall" : "./node_modules/.bin/webpack"
+    "postinstall": "./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "babel-preset-react": "^6.11.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "react-masonry-component": "^4.2.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "redux": "^3.5.2",

@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resource :session
 
     resources :images
+    resources :collections
   end
 end

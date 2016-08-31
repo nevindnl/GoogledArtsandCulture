@@ -1,12 +1,14 @@
 import React from 'react';
 
 import Header from './header/header_container';
-import Images from './images/images_container';
+import Footer from './footer/footer';
+import Home from './home/home';
 
 const App = ({children}) => (
-  <div>
+  <div className='home'>
     <Header />
-    <Images />
+      {children}
+    <Footer />
   </div>
 );
 
