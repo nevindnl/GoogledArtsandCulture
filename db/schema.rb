@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160831005621) do
+ActiveRecord::Schema.define(version: 20160831034852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20160831005621) do
   add_index "collected_images", ["image_id"], name: "index_collected_images_on_image_id", using: :btree
 
   create_table "collections", force: :cascade do |t|
-    t.string   "category"
     t.string   "title",                   null: false
     t.text     "description",             null: false
     t.integer  "user_id",     default: 1
@@ -35,7 +34,6 @@ ActiveRecord::Schema.define(version: 20160831005621) do
     t.datetime "updated_at",              null: false
   end
 
-  add_index "collections", ["category"], name: "index_collections_on_category", using: :btree
   add_index "collections", ["description"], name: "index_collections_on_description", using: :btree
   add_index "collections", ["title"], name: "index_collections_on_title", using: :btree
   add_index "collections", ["user_id"], name: "index_collections_on_user_id", using: :btree
