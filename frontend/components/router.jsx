@@ -3,6 +3,7 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 
 import App from './app';
 import AuthForm from './auth_form/auth_form_container';
+import Home from './home/home';
 import {requestImages} from '../actions/images_actions';
 import {requestCollections} from '../actions/collections_actions';
 
@@ -26,7 +27,8 @@ class AppRouter extends React.Component{
 		return (
 	    <Router history={hashHistory}>
 				<Route path='/addSession' component={AuthForm} />
-	      <Route path='/' component={App} onEnter={this._home.bind(this)}>
+	      <Route path='/' component={App}>
+					<IndexRoute component={Home} onEnter={this._home.bind(this)}/>
 	      </Route>
 	    </Router>
 	  );
