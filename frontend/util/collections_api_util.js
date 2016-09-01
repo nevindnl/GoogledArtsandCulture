@@ -5,3 +5,11 @@ export const requestCollections = (success, error) => {
     error
   });
 };
+
+export const requestFavoriteCollections = (success, error) => {
+  $.get({
+    url: 'api/collections/favorites',
+    success,
+    error
+  });
+};

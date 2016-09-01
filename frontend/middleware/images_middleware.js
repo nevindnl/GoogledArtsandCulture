@@ -9,6 +9,9 @@ const ImagesMiddleware = ({getState, dispatch}) => next => action => {
     case ImagesActions.REQUEST_IMAGES:
       ImagesAPI.requestImages(success);
       return next(action);
+    case ImagesActions.REQUEST_FAVORITE_IMAGES:
+      ImagesAPI.requestFavoriteImages(success);
+      return next(action);
     default:
       return next(action);
   }

@@ -9,6 +9,9 @@ const CollectionsMiddleware = ({getState, dispatch}) => next => action => {
     case CollectionsActions.REQUEST_COLLECTIONS:
       CollectionsAPI.requestCollections(success);
       return next(action);
+    case CollectionsActions.REQUEST_FAVORITE_COLLECTIONS:
+      CollectionsAPI.requestFavoriteCollections(success);
+      return next(action);
     default:
       return next(action);
   }

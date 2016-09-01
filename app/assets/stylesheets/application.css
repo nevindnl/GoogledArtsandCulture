@@ -30,8 +30,18 @@
    list-style: none;
  }
 
+ main{
+   position: relative;
+ }
+
+ h3{
+   margin-left: 50px;
+ }
+
 .logo div{
   font-family: 'Product Sans', Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
 }
 
 .googled{
@@ -39,10 +49,60 @@
   margin-right: .25em;
 }
 
+.sidebar{
+  background-color:#fefffc;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  z-index: 1;
+  width: 300px;
+  box-shadow: 3px 0px 3px #c0c4c7;
+  overflow: hidden;
+}
+
+.sidebar img{
+  height: 25px;
+  width: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.sidebar section{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #c0c4c7;
+  color: gray;
+}
+
+.sidebar #sidebar{
+  height: 50px;
+  width: 50px;
+  margin: 0;
+}
+
+.sidebar .corner{
+  height: 60px;
+}
+
+.sidebar .logo{
+  display: flex;
+  font-size: 20px;
+  color: black;
+}
+
+.sidebar h6{
+  font-size: 14px;
+}
+
 .header{
   width: 100%
   display: flex;
   align-items: center;
+  height: 55px;
+  padding-top: 5px;
 }
 
 .header button{
@@ -64,7 +124,7 @@
 .header img{
   height: 50px;
   width: 50px;
-  margin-right: 15px;
+  margin-right: 10px;
   float: left;
 }
 
@@ -77,12 +137,8 @@
 
 .header .logo div{
   float: left;
-  padding: 0;
-  margin-top: 14px;
-}
-
-.home h3{
-  margin-left: 70px;
+  margin-top: 12px;
+  font-size: 20px;
 }
 
 .banner{
@@ -104,7 +160,6 @@
   justify-content: center;
   top: 120px;
   color: white;
-  z-index: 2;
   font-size: 60px;
   width: 100%;
 }
@@ -113,7 +168,6 @@
   position: absolute;
   text-align: center;
   top: 210px;
-  z-index: 2;
   font-size: 20px;
   color: white;
   width: 100%;

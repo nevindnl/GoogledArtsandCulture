@@ -5,3 +5,11 @@ export const requestImages = (success, error) => {
     error
   });
 };
+
+export const requestFavoriteImages = (success, error) => {
+  $.get({
+    url: 'api/images/favorites',
+    success,
+    error
+  });
+};
