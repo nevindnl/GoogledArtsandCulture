@@ -8,9 +8,9 @@ const Collections = ({collections, header}) => {
   ));
 
   return (
-    <div className='collections_container'>
+    <div className='collections'>
       <h3>{header}</h3>
-      <ul className='collections'>
+      <ul>
         {collectionItems}
       </ul>
     </div>

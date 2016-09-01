@@ -8,9 +8,9 @@ const Images = ({images, header}) => {
   ));
 
   return (
-    <div className='images_container'>
+    <div className='images'>
       <h3>{header}</h3>
-      <ul className='images'>
+      <ul>
         {imageItems}
       </ul>
     </div>

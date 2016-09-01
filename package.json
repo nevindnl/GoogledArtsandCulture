@@ -37,7 +37,9 @@
     "react-masonry-component": "^4.2.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
+    "react-sidebar": "^2.2.1",
     "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
     "webpack": "^1.13.2"
   }
 }

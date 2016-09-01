@@ -7,7 +7,7 @@ const Header = ({currentUser, logout, router}) => {
 
   return (
     <div className='header group'>
-      <img id='sidebar' src='https://cdn2.iconfinder.com/data/icons/bank/100/Bankicons_Set-13-512.png' onClick={() => router.push('/favorites')}></img>
+      <img src='https://cdn2.iconfinder.com/data/icons/bank/100/Bankicons_Set-13-512.png'></img>
       <Logo />
       <button id='sign_in' onClick={buttonClick}>{buttonContent}</button>
       <img id='search' src='http://iconshow.me/media/images/ui/slim-square-icons/png/512/search.png'></img>

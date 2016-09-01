@@ -1,0 +1,23 @@
+.images{
+  background-color: #eeeeee;
+  padding-top: 40px;
+  margin-top: 0;
+
+  ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0 80px 0;
+    margin: 0;
+
+    img{
+      height: 200px;
+      width: 200px;
+      border: 1px solid black;
+      margin: 5px;
+    }
+  }
+}

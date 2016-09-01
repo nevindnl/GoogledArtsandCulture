@@ -36,7 +36,7 @@ class AppRouter extends React.Component{
 	    <Router history={hashHistory}>
 				<Route path='/addSession' component={AuthForm} />
 	      <Route path='/' component={App}>
-					<IndexRoute component={Home} onEnter={this._home.bind(this)}/>
+					<IndexRoute component={Home} onEnter={this._home.bind(this)} />
 					<Route path='favorites' component={Favorites} onEnter={this._favorites.bind(this)}/>
 	      </Route>
 	    </Router>
