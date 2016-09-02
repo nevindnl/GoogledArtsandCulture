@@ -11,7 +11,7 @@ const Home = ({router}) => (
       <img src='http://hd.unsplash.com/photo-1446819981653-4df81911e0a1'></img>
       <div>
         <Logo />
-        <div className='sublogo' onClick={() => router.push('/')}>Explore images and collections from around the internet.</div>
+        <div id='sublogo' onClick={() => router.push('/')}>Explore images and collections from around the internet.</div>
       </div>
     </div>
     <Collections header='Collections of the day'/>

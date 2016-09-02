@@ -18,3 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ReactDOM.render(<Root store={store}/>, root);
 });
+
+// auth: validation errors
+// auth: demo login

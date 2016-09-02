@@ -19,6 +19,16 @@ class AuthForm extends React.Component{
     return e => this.setState({[property]: e.target.value});
   }
 
+  signup(e){
+    e.preventDefault();
+    this.props.signup({user: this.state});
+  }
+
+  login(e){
+    e.preventDefault();
+    this.props.login({user: this.state});
+  }
+
   render(){
     const errors = this.props.errors.map((error, i) => (
       <li key={i}>
@@ -34,8 +44,8 @@ class AuthForm extends React.Component{
         <form>
           <input type='text' placeholder='Username' value={this.state.username} onChange={this.update('username')}/>
           <input type='password' placeholder='Password' value={this.state.password} onChange={this.update('password')}/>
-          <button onClick={() => this.props.signup({user: this.state})}>Sign Up</button>
-          <button onClick={() => this.props.login({user: this.state})}>Login</button>
+          <button onClick={this.signup.bind(this)}>Sign Up</button>
+          <button onClick={this.login.bind(this)}>Login</button>
         </form>
       </div>
     );

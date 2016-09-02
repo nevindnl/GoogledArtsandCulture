@@ -6,7 +6,7 @@ import Sidebar from './sidebar/sidebar';
 import Home from './home/home';
 
 const App = ({children}) => (
-  <div className='homepage'>
+  <div className='app'>
     <Sidebar />
     <Header />
       {children}

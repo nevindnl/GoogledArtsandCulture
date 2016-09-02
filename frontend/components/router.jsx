@@ -5,6 +5,7 @@ import App from './app';
 import AuthForm from './auth_form/auth_form_container';
 import Home from './home/home';
 import Favorites from './favorites/favorites_container';
+import NewCollection from './new_collection/new_collection_container';
 import {requestImages, requestFavoriteImages} from '../actions/images_actions';
 import {requestCollections, requestFavoriteCollections} from '../actions/collections_actions';
 
@@ -37,7 +38,9 @@ class AppRouter extends React.Component{
 				<Route path='/addSession' component={AuthForm} />
 	      <Route path='/' component={App}>
 					<IndexRoute component={Home} onEnter={this._home.bind(this)} />
-					<Route path='favorites' component={Favorites} onEnter={this._favorites.bind(this)}/>
+					<Route path='favorites' component={Favorites} onEnter={this._favorites.bind(this)}>
+						<Route path='/new_collection' component={NewCollection} />
+					</Route>
 	      </Route>
 	    </Router>
 	  );

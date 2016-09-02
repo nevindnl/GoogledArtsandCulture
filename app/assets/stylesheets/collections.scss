@@ -2,16 +2,26 @@
   padding-top: 20px;
   padding-bottom: 80px;
   margin-top: 0;
-  border-bottom: 1px solid gray;
+
+  h3{
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  h6{
+    margin-left: 50px;
+  }
 
   ul{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;;
     width: 100%;
     box-sizing: border-box;
     margin: 0;
+    margin-left: 50px;
 
     img{
       height: 200px;
