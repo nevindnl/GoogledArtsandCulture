@@ -5,6 +5,10 @@ class Api::ImagesController < ApplicationController
 
   def favorites
     @images = current_user.images
-    render :favorites
+  end
+
+  def collection
+    @collection = Collection.find_by_title(params[:title])
+    @images = @collection.images
   end
 end

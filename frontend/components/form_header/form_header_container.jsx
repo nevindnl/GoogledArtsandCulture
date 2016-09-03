@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import FormHeader from './form_header';
 
-const mapStatetoProps = state => ({
+const mapStatetoProps = (state, ownProps) => ({
 });
 
 const mapDispatchtoProps = dispatch => ({

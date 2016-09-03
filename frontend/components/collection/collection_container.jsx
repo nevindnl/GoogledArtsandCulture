@@ -2,13 +2,17 @@ import React from 'react';
 import {withRouter} from 'react-router';
 import {connect} from 'react-redux';
 
-import Favorites from './favorites';
+import Collection from './collection';
 
 const mapStatetoProps = state => ({
-  collections: state.collections,
   images: state.images
 });
 
+const mapDispatchtoProps = dispatch => ({
+
+});
+
 export default withRouter(connect(
-  mapStatetoProps
-)(Favorites));
+  mapStatetoProps,
+  mapDispatchtoProps
+)(Collection));

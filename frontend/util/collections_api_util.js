@@ -13,3 +13,18 @@ export const requestFavoriteCollections = (success, error) => {
     error
   });
 };
+
+export const createCollection = (collection, collectedImages, success, error) => {
+  $.post({
+    url: 'api/collections/',
+    data: collection,
+    success: () => {
+      $.post({
+        url: 'api/collected_images/collect',
+        data: collectedImages,
+        success
+      });
+    },
+    error
+  });
+};

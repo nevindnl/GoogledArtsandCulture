@@ -1,10 +1,9 @@
 import React from 'react';
-import {withRouter} from 'react-router';
 import Logo from '../logo/logo';
 
 const Header = ({currentUser, logout, sidebar, router}) => {
   const buttonContent = currentUser ? 'LOGOUT ' + currentUser.username : 'SIGN IN';
-  const buttonClick = currentUser ? logout : () => router.push('addSession');
+  const buttonClick = currentUser ? logout : () => router.push('/addSession');
 
   function _toggleSidebar(){
     $('.sidebar').addClass('visible');

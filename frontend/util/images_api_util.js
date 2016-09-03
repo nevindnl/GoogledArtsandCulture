@@ -13,3 +13,12 @@ export const requestFavoriteImages = (success, error) => {
     error
   });
 };
+
+export const requestCollection = (title, success, error) => {
+  $.get({
+    url: 'api/images/collection',
+    data: {title},
+    success,
+    error
+  });
+};

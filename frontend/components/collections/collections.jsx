@@ -2,14 +2,14 @@ import React from 'react';
 
 import CollectionItem from './collection_item';
 
-const Collections = ({collections, header, subheader, newCollection, selectImages, invisible, router}) => {
+const Collections = ({collections, header, subheader, newCollection, collectImages, invisible, router}) => {
   const collectionItems = collections.map(collection => (
     <CollectionItem collection={collection} key={collection.id} />
   ));
 
   if (newCollection){
-    collectionItems.push(
-      <li className='newCollection' key={-1} onClick={selectImages}>
+    collectionItems.unshift(
+      <li id='new_collection' key={-1} onClick={collectImages}>
         <h4>+</h4>
         <h5>Create a new collection</h5>
         <h6>Select the items you would like to include from your list of favorites.</h6>

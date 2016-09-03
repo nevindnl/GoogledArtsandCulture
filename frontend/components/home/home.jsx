@@ -6,7 +6,7 @@ import Images from '../images/images_container';
 import Collections from '../collections/collections_container';
 
 const Home = ({router}) => (
-  <div>
+  <div className='group'>
     <div className='banner'>
       <img src='http://hd.unsplash.com/photo-1446819981653-4df81911e0a1'></img>
       <div>

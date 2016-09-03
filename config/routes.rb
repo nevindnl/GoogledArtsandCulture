@@ -6,9 +6,11 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     resources :images, only: [:index]
-    resources :collections, only: [:index]
+    resources :collections, only: [:index, :create]
 
     get 'images/favorites', to: 'images#favorites'
+    get 'images/collection', to: 'images#collection'
     get 'collections/favorites', to: 'collections#favorites'
+    post 'collected_images/collect', to: 'collected_images#collect'
   end
 end

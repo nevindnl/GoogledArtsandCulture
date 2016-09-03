@@ -9,7 +9,6 @@ const SessionReducer = (state = {currentUser: null, errors: []}, action) => {
       newState.currentUser = action.user;
       return newState;
     case SessionActions.RECEIVE_ERRORS:
-      debugger;
       newState.errors = action.errors.responseJSON;
       return newState;
     case SessionActions.LOGOUT:

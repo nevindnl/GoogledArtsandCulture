@@ -1,9 +1,9 @@
-import {CollectionsActions, receiveCollections} from '../actions/collections_actions';
+import {CollectionsActions, receiveCollections, receiveCollection, receiveErrors} from '../actions/collections_actions';
 import * as CollectionsAPI from '../util/collections_api_util';
 
 const CollectionsMiddleware = ({getState, dispatch}) => next => action => {
   let success = collections => dispatch(receiveCollections(collections));
-  let errors = data => dispatch(receiveCollections(data));
+  let errors = data => dispatch(receiveErrors(data));
 
   switch(action.type){
     case CollectionsActions.REQUEST_COLLECTIONS:
@@ -11,6 +11,10 @@ const CollectionsMiddleware = ({getState, dispatch}) => next => action => {
       return next(action);
     case CollectionsActions.REQUEST_FAVORITE_COLLECTIONS:
       CollectionsAPI.requestFavoriteCollections(success);
+      return next(action);
+    case CollectionsActions.CREATE_COLLECTION:
+      success = collection => dispatch(receiveCollection(collection));
+      CollectionsAPI.createCollection(action.collection, action.collectedImages, success, errors);
       return next(action);
     default:
       return next(action);

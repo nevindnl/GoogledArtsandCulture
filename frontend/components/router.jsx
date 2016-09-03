@@ -4,9 +4,10 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app';
 import AuthForm from './auth_form/auth_form_container';
 import Home from './home/home';
-import Favorites from './favorites/favorites_container';
-import NewCollection from './new_collection/new_collection_container';
-import {requestImages, requestFavoriteImages} from '../actions/images_actions';
+import Favorites from './favorites/favorites';
+import FavoritesHome from './favorites_home/favorites_home_container';
+import Collection from './collection/collection_container';
+import {requestImages, requestFavoriteImages, requestCollection} from '../actions/images_actions';
 import {requestCollections, requestFavoriteCollections} from '../actions/collections_actions';
 
 class AppRouter extends React.Component{
@@ -32,14 +33,19 @@ class AppRouter extends React.Component{
     }
 	}
 
+	_collection(nextState){
+		this.context.store.dispatch(requestCollection(nextState.params.title));
+	}
+
 	render(){
 		return (
 	    <Router history={hashHistory}>
 				<Route path='/addSession' component={AuthForm} />
 	      <Route path='/' component={App}>
 					<IndexRoute component={Home} onEnter={this._home.bind(this)} />
-					<Route path='favorites' component={Favorites} onEnter={this._favorites.bind(this)}>
-						<Route path='/new_collection' component={NewCollection} />
+					<Route path='/favorites' component={Favorites}>
+						<IndexRoute component={FavoritesHome} onEnter={this._favorites.bind(this)} />
+						<Route path='/favorites/collections/:title' component={Collection} onEnter={this._collection.bind(this)} />
 					</Route>
 	      </Route>
 	    </Router>

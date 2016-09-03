@@ -2,6 +2,7 @@
   padding-top: 20px;
   padding-bottom: 80px;
   margin-top: 0;
+  padding-right: 50px;
 
   h3{
     margin-left: 50px;
@@ -22,6 +23,8 @@
     box-sizing: border-box;
     margin: 0;
     margin-left: 50px;
+    margin-right: 50px;
+    justify-content: flex-start;
 
     img{
       height: 200px;

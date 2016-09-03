@@ -1,7 +1,8 @@
 export const ImagesActions = {
   REQUEST_IMAGES: 'REQUEST_IMAGES',
-  RECEIVE_IMAGES: 'RECEIVE_IMAGES',
   REQUEST_FAVORITE_IMAGES: 'REQUEST_FAVORITE_IMAGES',
+  REQUEST_COLLECTION: 'REQUEST_COLLECTION',
+  RECEIVE_IMAGES: 'RECEIVE_IMAGES',
 };
 
 export const requestImages = () => ({
@@ -10,6 +11,11 @@ export const requestImages = () => ({
 
 export const requestFavoriteImages = () => ({
   type: ImagesActions.REQUEST_FAVORITE_IMAGES,
+});
+
+export const requestCollection = (title) => ({
+  type: ImagesActions.REQUEST_COLLECTION,
+  title
 });
 
 export const receiveImages = images => ({

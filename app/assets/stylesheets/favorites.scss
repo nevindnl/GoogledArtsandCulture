@@ -1,20 +1,27 @@
 .favorites{
   &.invisible{
-    transform: translateY(-420px);
+    transform: translateY(-55px);
     transition: transform ease 500ms;
+
+    .collections{
+      display: none;
+    }
   }
 
   &.visible{
     transform: translateY(0px);
     transition: transform ease 500ms;
+
+    .collections{
+      display: block;
+    }
   }
 
   .collections{
-    margin-top: 0;
     padding-top: 0;
   }
 
-  .newCollection{
+  #new_collection{
     height: 200px;
     width: 200px;
     margin: 5px;
@@ -37,6 +44,23 @@
       padding: 5px;
       color: gray;
       font-weight: 400;
+    }
+  }
+
+  .images{
+    background-color: white;
+  }
+
+  .errors{
+    width: 100%;
+    margin: 0;
+
+    &.invisible{
+      display: none;
+    }
+
+    li{
+      text-align: center;
     }
   }
 }

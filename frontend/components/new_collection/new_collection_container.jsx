@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import NewCollection from './new_collection';
 
 const mapStatetoProps = (state, ownProps) => ({
-  selectedImages: ownProps.location.query.selectedImages
+  errors: state.collections.errors
 });
 
 const mapDispatchtoProps = dispatch => ({
