@@ -9,10 +9,12 @@ const Collections = ({collections, header, subheader, newCollection, collectImag
 
   if (newCollection){
     collectionItems.unshift(
-      <li id='new_collection' key={-1} onClick={collectImages}>
-        <h4>+</h4>
-        <h5>Create a new collection</h5>
-        <h6>Select the items you would like to include from your list of favorites.</h6>
+      <li id='none' key={-1} onClick={collectImages}>
+				<div id='new_collection'>
+					<h4>+</h4>
+					<h5>Create a new collection</h5>
+					<h6>Select the items you would like to include from your list of favorites.</h6>
+				</div>
       </li>
     );
   }

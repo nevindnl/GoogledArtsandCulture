@@ -7,7 +7,6 @@ const CollectionItem = ({collection}) => {
       <img src={content}></img>
     </li>
   );
-
 };
 
 export default CollectionItem;

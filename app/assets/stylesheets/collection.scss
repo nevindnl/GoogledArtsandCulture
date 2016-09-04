@@ -1,5 +1,50 @@
 .collection{
-  .images{
-    background-color: white;
-  }
+	text-align: center;
+
+	h1{
+		font-size: 42px;
+		font-weight: 200;
+		padding-top: 15px;
+		margin-bottom: 10px;
+	}
+
+	figure{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-bottom: 1px black solid;
+		width: 150px;
+		margin: auto;
+		padding-bottom: 15px;
+
+		h4{
+			font-weight: 300;
+			font-size: 15px;
+			color: #aaaaaa;
+			margin-left: 15px;
+		}
+
+		img{
+			height: 22px;
+			width: 22px;
+		}
+	}
+
+	section{
+		padding-top: 35px;
+		margin: auto;
+		width: 200px;
+
+		img{
+			height: 22px;
+			width: 22px;
+			padding: 0 15px;
+		}
+	}
+
+
+
+	.images{
+		background-color: white;
+	}
 }

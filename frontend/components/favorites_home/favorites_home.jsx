@@ -21,11 +21,10 @@ class FavoritesHome extends React.Component{
   }
 
   componentDidMount(){
-    $('.collections ul').on('click', 'li', e => {
-      this.props.router.push(`/favorites/collections/${e.currentTarget.id}`);
-    });
-    $('#new_collection').off('click', 'li', e => {
-      this.props.router.push(`/favorites/collections/${e.currentTarget.id}`);
+    $('.collections').on('click', 'li', e => {
+			if (e.currentTarget.id !== 'none'){
+				this.props.router.push(`/favorites/collections/${e.currentTarget.id}`);
+			}
     });
   }
 

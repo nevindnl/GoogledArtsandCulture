@@ -1,17 +1,10 @@
 .collections{
-  padding-top: 20px;
-  padding-bottom: 80px;
+  padding: 20px 55px 80px 55px;
   margin-top: 0;
-  padding-right: 50px;
 
   h3{
-    margin-left: 50px;
     font-size: 20px;
     font-weight: normal;
-  }
-
-  h6{
-    margin-left: 50px;
   }
 
   ul{
@@ -22,15 +15,18 @@
     width: 100%;
     box-sizing: border-box;
     margin: 0;
-    margin-left: 50px;
-    margin-right: 50px;
     justify-content: flex-start;
 
+		li{
+			width: 20%;
+			min-width: 200px;
+		}
+
     img{
-      height: 200px;
-      width: 200px;
+			width: 96%;
+			height: auto;
       border: 1px solid black;
-      margin: 5px;
+      margin: 2% 4% 2% 0%;
     }
   }
 }

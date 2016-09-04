@@ -8,7 +8,8 @@ import CollectionsMiddleware from './collections_middleware';
 const RootMiddleware = applyMiddleware(
   SessionMiddleware,
   ImagesMiddleware,
-  CollectionsMiddleware
+  CollectionsMiddleware,
+	logger()
 );
 
 export default RootMiddleware;
