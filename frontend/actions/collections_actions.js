@@ -2,8 +2,12 @@ export const CollectionsActions = {
   REQUEST_COLLECTIONS: 'REQUEST_COLLECTIONS',
   REQUEST_FAVORITE_COLLECTIONS: 'REQUEST_FAVORITE_COLLECTIONS',
   RECEIVE_COLLECTIONS: 'RECEIVE_COLLECTIONS',
+  REQUEST_CURRENT_COLLECTION: 'REQUEST_CURRENT_COLLECTION',
+  RECEIVE_CURRENT_COLLECTION: 'RECEIVE_CURRENT_COLLECTION',
   CREATE_COLLECTION: 'CREATE_COLLECTION',
+  UPDATE_COLLECTION: 'UPDATE_COLLECTION',
   RECEIVE_COLLECTION: 'RECEIVE_COLLECTION',
+  DELETE_COLLECTION: 'DELETE_COLLECTION',
   RECEIVE_ERRORS: 'RECEIVE_ERRORS'
 };
 
@@ -20,8 +24,24 @@ export const receiveCollections = collections => ({
   collections
 });
 
+export const requestCurrentCollection = id => ({
+  type: CollectionsActions.REQUEST_CURRENT_COLLECTION,
+  id
+});
+
+export const receiveCurrentCollection = collection => ({
+  type: CollectionsActions.RECEIVE_CURRENT_COLLECTION,
+  collection
+});
+
 export const createCollection = (collection, collectedImages) => ({
   type: CollectionsActions.CREATE_COLLECTION,
+  collection,
+  collectedImages
+});
+
+export const updateCollection = (collection, collectedImages) => ({
+  type: CollectionsActions.UPDATE_COLLECTION,
   collection,
   collectedImages
 });
@@ -29,6 +49,11 @@ export const createCollection = (collection, collectedImages) => ({
 export const receiveCollection = collection => ({
   type: CollectionsActions.RECEIVE_COLLECTION,
   collection
+});
+
+export const deleteCollection = id => ({
+  type: CollectionsActions.DELETE_COLLECTION,
+  id
 });
 
 export const receiveErrors = errors => ({

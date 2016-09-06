@@ -13,9 +13,9 @@ export const requestFavoriteImages = () => ({
   type: ImagesActions.REQUEST_FAVORITE_IMAGES,
 });
 
-export const requestCollection = (title) => ({
+export const requestCollection = id => ({
   type: ImagesActions.REQUEST_COLLECTION,
-  title
+  id
 });
 
 export const receiveImages = images => ({

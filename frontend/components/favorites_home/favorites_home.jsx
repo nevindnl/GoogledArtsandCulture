@@ -29,14 +29,14 @@ class FavoritesHome extends React.Component{
   }
 
   collectImages(){
-    $('.images ul').on('click', 'li', this.collectImage.bind(this));
     $('.favorites').addClass('invisible');
     $('.form_header').addClass('visible');
     $('.errors').addClass('invisible');
+    $('.images ul').on('click', 'li', this.collectImage.bind(this));
   }
 
   collectImage(e){
-    let target = $(e.currentTarget);
+    let target = e.currentTarget;
     let state = merge({}, this.state);
 
     let index = state.collectedImages.indexOf(target.id);
@@ -47,7 +47,7 @@ class FavoritesHome extends React.Component{
       state.collectedImages.splice(index, 1);
     }
 
-    target.toggleClass('collected');
+    $(target).toggleClass('collected');
     this.setState(state);
   }
 
@@ -82,6 +82,7 @@ class FavoritesHome extends React.Component{
     $('.favorites').removeClass('invisible');
     $('.images li').removeClass('collected');
     $('.errors').removeClass('invisible');
+    $('.images ul').off('click', 'li', this.collectImage.bind(this));
     this.setState(this.defaultState);
   }
 

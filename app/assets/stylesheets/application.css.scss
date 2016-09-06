@@ -21,6 +21,7 @@
  html{
    width: 100%;
    overflow-x: hidden;
+   height: 100%;
  }
 
  body{
@@ -28,11 +29,13 @@
    padding: 0;
    width: 100%;
    overflow-x: hidden;
+   height: 100%;
  }
 
  main{
    position: relative;
    width: 100%;
+   height: 100%;
  }
 
  ul{
@@ -58,6 +61,10 @@
     font-weight: 500;
     margin-right: .25em;
   }
+}
+
+.app{
+  height: 100%;
 }
 
 .group:after {

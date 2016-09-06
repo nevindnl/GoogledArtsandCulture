@@ -14,10 +14,10 @@ export const requestFavoriteImages = (success, error) => {
   });
 };
 
-export const requestCollection = (title, success, error) => {
+export const requestCollection = (id, success, error) => {
   $.get({
     url: 'api/images/collection',
-    data: {title},
+    data: {id},
     success,
     error
   });

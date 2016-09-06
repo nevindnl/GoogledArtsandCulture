@@ -13,7 +13,7 @@ const ImagesMiddleware = ({getState, dispatch}) => next => action => {
       ImagesAPI.requestFavoriteImages(success);
       return next(action);
     case ImagesActions.REQUEST_COLLECTION:
-      ImagesAPI.requestCollection(action.title, success);
+      ImagesAPI.requestCollection(action.id, success);
       return next(action);
     default:
       return next(action);

@@ -8,7 +8,7 @@ class Api::ImagesController < ApplicationController
   end
 
   def collection
-    @collection = Collection.find_by_title(params[:title])
+    @collection = Collection.find_by_id(params[:id])
     @images = @collection.images
   end
 end

@@ -8,16 +8,12 @@ import Favorites from './favorites/favorites';
 import FavoritesHome from './favorites_home/favorites_home_container';
 import Collection from './collection/collection_container';
 import {requestImages, requestFavoriteImages, requestCollection} from '../actions/images_actions';
-import {requestCollections, requestFavoriteCollections} from '../actions/collections_actions';
+import {requestCollections, requestFavoriteCollections, requestCurrentCollection} from '../actions/collections_actions';
 
 class AppRouter extends React.Component{
 	constructor(props){
 		super(props);
 	}
-
-  _ensureLoggedIn(e, replace){
-
-  }
 
 	_home(){
 		this.context.store.dispatch(requestImages());
@@ -34,7 +30,8 @@ class AppRouter extends React.Component{
 	}
 
 	_collection(nextState){
-		this.context.store.dispatch(requestCollection(nextState.params.title));
+		this.context.store.dispatch(requestCurrentCollection(nextState.params.id));
+		this.context.store.dispatch(requestCollection(nextState.params.id));
 	}
 
 	render(){
@@ -45,7 +42,7 @@ class AppRouter extends React.Component{
 					<IndexRoute component={Home} onEnter={this._home.bind(this)} />
 					<Route path='/favorites' component={Favorites}>
 						<IndexRoute component={FavoritesHome} onEnter={this._favorites.bind(this)} />
-						<Route path='/favorites/collections/:title' component={Collection} onEnter={this._collection.bind(this)} />
+						<Route path='/favorites/collections/:id' component={Collection} onEnter={this._collection.bind(this)} />
 					</Route>
 	      </Route>
 	    </Router>

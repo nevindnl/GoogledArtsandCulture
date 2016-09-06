@@ -10,12 +10,16 @@ const Sidebar = ({router}) => (
       <Logo />
     </section>
     <section id='sidebar_home' onClick={() => router.push('/')}>
-      <img src='http://downloadicons.net/sites/default/files/home-home-icon-90085.png'></img>
-      <h6>Home</h6>
+      <div className='hover'>
+        <img src='http://www.imsorrytohear.com/images/icon-home.png'></img>
+        <h6>Home</h6>
+      </div>
     </section>
     <section id='sidebar_favorites' onClick={() => router.push('/favorites')}>
-      <img src='http://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Heart_icon_red_hollow.svg/2000px-Heart_icon_red_hollow.svg.png'></img>
-      <h6>Favorites</h6>
+      <div className='hover'>
+        <img src='http://uploads.webflow.com/5462660fae5a7cad37e268b7/5462bf4e0d6292d7419a2326_icon-heart-grey.png'></img>
+        <h6>Favorites</h6>
+      </div>
     </section>
   </div>
 );
