@@ -3,7 +3,8 @@ export const SessionActions = {
   LOGOUT: 'LOGOUT',
   SIGNUP: 'SIGNUP',
   RECEIVE_CURRENT_USER: 'RECEIVE_CURRENT_USER',
-  RECEIVE_ERRORS: 'RECEIVE_ERRORS'
+  RECEIVE_ERRORS: 'RECEIVE_ERRORS',
+  CLEAR_ERRORS: 'CLEAR_ERRORS'
 };
 
 export const login = user => ({
@@ -28,4 +29,8 @@ export const receiveCurrentUser = user => ({
 export const receiveErrors = errors => ({
   type: SessionActions.RECEIVE_ERRORS,
   errors
+});
+
+export const clearErrors = () => ({
+  type: SessionActions.CLEAR_ERRORS
 });

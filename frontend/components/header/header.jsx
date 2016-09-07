@@ -1,9 +1,11 @@
 import React from 'react';
 import Logo from '../logo/logo';
 
-const Header = ({currentUser, logout, sidebar, router}) => {
+const Header = ({currentUser, logout, sidebar, id, favorited, toggleFavorite, router}) => {
   const buttonContent = currentUser ? 'LOGOUT ' + currentUser.username : 'SIGN IN';
   const buttonClick = currentUser ? logout : () => router.push('/addSession');
+
+  let favorite = favorited ? 'http://image.flaticon.com/icons/svg/60/60993.svg' : 'http://image.flaticon.com/icons/png/128/126/126471.png';
 
   function _toggleSidebar(){
     $('.sidebar').addClass('visible');
@@ -18,6 +20,7 @@ const Header = ({currentUser, logout, sidebar, router}) => {
       <Logo />
       <button id='sign_in' onClick={buttonClick}>{buttonContent}</button>
       <img id='header_search' src='https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-128.png'></img>
+      <img className='header_favorites invisible' src={favorite} onClick={() => toggleFavorite(id)}></img>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import Images from './images';
 
 const mapStatetoProps = state => ({
-  images: state.images,
+  images: state.images.images,
 });
 
 export default withRouter(connect(

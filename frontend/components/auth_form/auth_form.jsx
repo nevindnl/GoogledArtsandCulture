@@ -38,9 +38,9 @@ class AuthForm extends React.Component{
 
     return (
       <div className='auth_form'>
-        <h4>Googled</h4>
+        <h4 onClick={() => this.props.router.push('/')}>Googled</h4>
         <h6>Sign in with your Googled account</h6>
-        <ul>{errors}</ul>
+        <ul className='errors'>{errors}</ul>
         <form>
           <input type='text' placeholder='Username' value={this.state.username} onChange={this.update('username')}/>
           <input type='password' placeholder='Password' value={this.state.password} onChange={this.update('password')}/>

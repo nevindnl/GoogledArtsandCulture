@@ -8,7 +8,7 @@ export const CollectionsActions = {
   UPDATE_COLLECTION: 'UPDATE_COLLECTION',
   RECEIVE_COLLECTION: 'RECEIVE_COLLECTION',
   DELETE_COLLECTION: 'DELETE_COLLECTION',
-  RECEIVE_ERRORS: 'RECEIVE_ERRORS'
+  RECEIVE_COLLECTION_ERRORS: 'RECEIVE_COLLECTION_ERRORS'
 };
 
 export const requestCollections = () => ({
@@ -56,7 +56,7 @@ export const deleteCollection = id => ({
   id
 });
 
-export const receiveErrors = errors => ({
-  type: CollectionsActions.RECEIVE_ERRORS,
+export const receiveCollectionErrors = errors => ({
+  type: CollectionsActions.RECEIVE_COLLECTION_ERRORS,
   errors
 });

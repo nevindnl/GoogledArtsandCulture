@@ -7,11 +7,10 @@ export const login = (user, success, error) => {
   });
 };
 
-export const logout = (success, error) => {
+export const logout = (error) => {
   $.ajax({
     type: 'DELETE',
     url: 'api/session',
-    success,
     error
   });
 };

@@ -26,12 +26,14 @@ class FavoritesHome extends React.Component{
 				this.props.router.push(`/favorites/collections/${e.currentTarget.id}`);
 			}
     });
+    $('.errors').addClass('invisible');
   }
 
   collectImages(){
     $('.favorites').addClass('invisible');
     $('.form_header').addClass('visible');
     $('.errors').addClass('invisible');
+    $('.images ul').off();
     $('.images ul').on('click', 'li', this.collectImage.bind(this));
   }
 
@@ -74,6 +76,7 @@ class FavoritesHome extends React.Component{
       }
     );
     this._exitForm();
+    $('.errors').removeClass('invisible');
   }
 
   _exitForm(){
@@ -81,8 +84,9 @@ class FavoritesHome extends React.Component{
     $('.new_collection').removeClass('visible');
     $('.favorites').removeClass('invisible');
     $('.images li').removeClass('collected');
-    $('.errors').removeClass('invisible');
-    $('.images ul').off('click', 'li', this.collectImage.bind(this));
+    $('.errors').addClass('invisible');
+    $('.images ul').off();
+    $('.images ul').on('click', 'li', e => this.props.router.push(`/images/${e.currentTarget.id}`));
     this.setState(this.defaultState);
   }
 

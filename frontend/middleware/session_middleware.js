@@ -10,8 +10,8 @@ const SessionMiddleware = ({getState, dispatch}) => next => action => {
       SessionAPI.login(action.user, success, errors);
       return next(action);
     case SessionActions.LOGOUT:
-      SessionAPI.logout(() => next(action), errors);
-      break;
+      SessionAPI.logout(errors);
+      return next(action);
     case SessionActions.SIGNUP:
       SessionAPI.signup(action.user, success, errors);
       return next(action);

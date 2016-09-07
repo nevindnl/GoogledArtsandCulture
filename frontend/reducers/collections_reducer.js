@@ -10,11 +10,13 @@ const CollectionsReducer = (state = {collections: [], errors: [], currentCollect
       return newState;
     case CollectionsActions.RECEIVE_COLLECTION:
       newState.collections.push(action.collection);
+      newState.errors = [];
       return newState;
     case CollectionsActions.RECEIVE_CURRENT_COLLECTION:
       newState.currentCollection = action.collection;
+      newState.errors = [];
       return newState;
-    case CollectionsActions.RECEIVE_ERRORS:
+    case CollectionsActions.RECEIVE_COLLECTION_ERRORS:
       newState.errors = action.errors.responseJSON;
       return newState;
     default:

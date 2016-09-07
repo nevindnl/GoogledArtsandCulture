@@ -1,10 +1,10 @@
-import {CollectionsActions, receiveCollections, receiveCollection, receiveCurrentCollection, receiveErrors} from '../actions/collections_actions';
+import {CollectionsActions, receiveCollections, receiveCollection, receiveCurrentCollection, receiveCollectionErrors} from '../actions/collections_actions';
 import {requestCollection} from '../actions/images_actions';
 import * as CollectionsAPI from '../util/collections_api_util';
 
 const CollectionsMiddleware = ({getState, dispatch}) => next => action => {
   let success = collections => dispatch(receiveCollections(collections));
-  let errors = data => dispatch(receiveErrors(data));
+  let errors = data => dispatch(receiveCollectionErrors(data));
 
   switch(action.type){
     case CollectionsActions.REQUEST_COLLECTIONS:

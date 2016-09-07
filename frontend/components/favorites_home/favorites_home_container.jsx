@@ -8,7 +8,7 @@ import {createCollection} from '../../actions/collections_actions';
 const mapStatetoProps = state => ({
   collections: state.collections.collections,
   errors: state.collections.errors,
-  images: state.images
+  images: state.images.images
 });
 
 const mapDispatchtoProps = dispatch => ({

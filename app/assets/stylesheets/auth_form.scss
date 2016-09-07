@@ -71,4 +71,17 @@
       background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
     }
   }
+
+  .errors{
+    width: 100%;
+    margin: 0;
+
+    &.invisible{
+      display: none;
+    }
+
+    li{
+      text-align: center;
+    }
+  }
 }
