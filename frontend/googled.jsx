@@ -22,3 +22,5 @@ document.addEventListener('DOMContentLoaded', () => {
 // auth: validation errors
 // auth: demo login
 // change header to respond to path
+// new collection, masonry
+// disabled button new collection

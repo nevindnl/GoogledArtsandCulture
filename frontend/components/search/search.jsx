@@ -1,11 +1,10 @@
 import React from 'react';
 import {withRouter} from 'react-router';
 
-import Logo from '../logo/logo';
 import Images from '../images/images_container';
 import Collections from '../collections/collections_container';
 
-class Home extends React.Component{
+class Search extends React.Component{
   constructor(props){
     super(props);
   }
@@ -31,5 +30,4 @@ class Home extends React.Component{
   }
 }
 
-
-export default withRouter(Home);
+export default Search;

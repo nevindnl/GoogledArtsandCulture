@@ -12,11 +12,14 @@ class Collection extends React.Component{
     return(
       <div>
         <div className='collection'>
+          <div className='collection_image_container'>
+            <img src={this.props.firstImage.url} onClick={() => this.props.router.push(`/images/${this.props.firstImage.id}`)}></img>
+          </div>
           <div className='collection_header'>
             <h1>{this.props.title}</h1>
             <h3>{this.props.description}</h3>
           </div>
-          <Images />
+          <Images header={this.props.images.length + ' items'}/>
         </div>
       </div>
     );

@@ -55,11 +55,20 @@ export const updateCollection = (collection, collectedImages, success, error) =>
   });
 };
 
-export const deleteCollection = (id, success, error) => {
+export const deleteCollection = (id, error) => {
   $.ajax({
     type: 'DELETE',
     url: `api/collections/${id}`,
-    success,
     error
   });
 };
+
+// export const searchCollections = (word, success, error) => {
+//   $.ajax({
+//     type: 'GET',
+//     url: ``,
+//     data: {word}.
+//     success,
+//     error
+//   });
+// };

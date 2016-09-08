@@ -1,4 +1,5 @@
 import React from 'react';
+import Masonry from 'react-masonry-component';
 
 import CollectionItem from './collection_item';
 
@@ -23,9 +24,17 @@ const Collections = ({collections, header, subheader, newCollection, collectImag
     <div className={invisible ? 'collections invisible' : 'collections'}>
       <h3>{header}</h3>
       <h6>{subheader}</h6>
-      <ul>
+      <Masonry
+                className={''} // default ''
+                options={{
+                  fillWidth: true
+                }}
+                elementType={'ul'} // default 'div'
+                disableImagesLoaded={false}
+                updateOnEachImageLoad={true}
+            >
         {collectionItems}
-      </ul>
+      </Masonry>
     </div>
   );
 };

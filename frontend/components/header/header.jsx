@@ -19,7 +19,7 @@ const Header = ({currentUser, logout, sidebar, id, favorited, toggleFavorite, ro
       <img id='header_sidebar' onClick={_toggleSidebar} src='https://cdn2.iconfinder.com/data/icons/bank/100/Bankicons_Set-13-512.png'></img>
       <Logo />
       <button id='sign_in' onClick={buttonClick}>{buttonContent}</button>
-      <img id='header_search' src='https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-128.png'></img>
+      <img id='header_search' src='https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-128.png' onClick={() => $('.search_bar').addClass('visible')}></img>
       <img className='header_favorites invisible' src={favorite} onClick={() => toggleFavorite(id)}></img>
     </div>
   );

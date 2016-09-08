@@ -8,7 +8,9 @@ export const CollectionsActions = {
   UPDATE_COLLECTION: 'UPDATE_COLLECTION',
   RECEIVE_COLLECTION: 'RECEIVE_COLLECTION',
   DELETE_COLLECTION: 'DELETE_COLLECTION',
-  RECEIVE_COLLECTION_ERRORS: 'RECEIVE_COLLECTION_ERRORS'
+  RECEIVE_COLLECTION_ERRORS: 'RECEIVE_COLLECTION_ERRORS',
+  SEARCH_COLLECTIONS: 'SEARCH_COLLECTIONS',
+  RECEIVE_SEARCHED_COLLECTIONS: 'RECEIVE_SEARCHED_COLLECTIONS'
 };
 
 export const requestCollections = () => ({
@@ -60,3 +62,13 @@ export const receiveCollectionErrors = errors => ({
   type: CollectionsActions.RECEIVE_COLLECTION_ERRORS,
   errors
 });
+
+// export const searchCollections = word => ({
+//   type: CollectionsActions.SEARCH_COLLECTIONS,
+//   word
+// });
+//
+// export const receiveSearchedCollections = data => ({
+//   type: CollectionsActions.RECEIVE_SEARCHED_COLLECTIONS,
+//   data
+// });

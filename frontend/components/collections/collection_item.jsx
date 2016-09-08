@@ -5,6 +5,9 @@ const CollectionItem = ({collection}) => {
   return(
     <li id={collection.id}>
       <img src={content}></img>
+      <span>
+        <div>{collection.title}</div>
+      </span>
     </li>
   );
 };

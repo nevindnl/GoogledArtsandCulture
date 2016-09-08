@@ -1,4 +1,4 @@
-import {ImagesActions, receiveImages, receiveCurrentImage, receiveFavorite} from '../actions/images_actions';
+import {ImagesActions, receiveImages, receiveCurrentImage, receiveFavorite, receiveSearchedImages} from '../actions/images_actions';
 import * as ImagesAPI from '../util/images_api_util';
 
 const ImagesMiddleware = ({getState, dispatch}) => next => action => {
@@ -21,6 +21,10 @@ const ImagesMiddleware = ({getState, dispatch}) => next => action => {
     case ImagesActions.TOGGLE_FAVORITE:
       success = () => dispatch(receiveFavorite());
       ImagesAPI.toggleFavorite(action.id, success);
+      return next(action);
+    case ImagesActions.SEARCH_IMAGES:
+      success = data => dispatch(receiveSearchedImages(data));
+      ImagesAPI.searchImages(action.word, action.page, success);
       return next(action);
     default:
       return next(action);

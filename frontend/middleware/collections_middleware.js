@@ -1,4 +1,4 @@
-import {CollectionsActions, receiveCollections, receiveCollection, receiveCurrentCollection, receiveCollectionErrors} from '../actions/collections_actions';
+import {CollectionsActions, receiveCollections, receiveCollection, receiveCurrentCollection, receiveCollectionErrors, receiveSearchedCollections} from '../actions/collections_actions';
 import {requestCollection} from '../actions/images_actions';
 import * as CollectionsAPI from '../util/collections_api_util';
 
@@ -29,9 +29,12 @@ const CollectionsMiddleware = ({getState, dispatch}) => next => action => {
       CollectionsAPI.updateCollection(action.collection, action.collectedImages, success, errors);
       return next(action);
     case CollectionsActions.DELETE_COLLECTION:
-      success = () => next(action);
-      CollectionsAPI.deleteCollection(action.id, success, errors);
-      break;
+      CollectionsAPI.deleteCollection(action.id, errors);
+      return next(action);
+    // case CollectionsActions.SEARCH_COLLECTIONS:
+    //   success = data => dispatch(receiveSearchedCollections(data));
+    //   CollectionsAPI.searchCollections(action.word, success);
+    //   return next(action);
     default:
       return next(action);
   }

@@ -2,32 +2,45 @@
   background-color: #f5f5f5;
   padding: 20px 55px 80px 55px;
   margin-top: 0;
+  margin-bottom: 80px;
 
   h3{
     font-size: 20px;
     font-weight: normal;
   }
 
+  .images_container{
+    width: 100%;
+    position: relative;
+  }
+
+  .fillerBox {
+    display: none;
+  	background-color: white;
+  	float: left;
+  	position: relative;
+  }
+
   ul{
-    display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
 		width: 100%;
 		box-sizing: border-box;
 		margin: 0;
-		justify-content: flex-start;
-		width: 100%;
+    width: 100%;
+    margin: auto;
 
 		li{
-			width: 20%;
-			min-width: 200px;
+    	float: left;
+    	position: relative;
+      margin: 0.2%;
+      padding: 0;
+      width: 19.6%;
+      min-width: 200px;
 		}
 
     img{
-			width: 96%;
-			height: auto;
-      border: 1px solid black;
-			margin: 2% 4% 2% 0%;
+      width: 96%;
+			margin: 0;
+      padding: 0;
     }
 
     .collected{

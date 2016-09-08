@@ -8,7 +8,8 @@ const mapStatetoProps = state => ({
 	images: state.images.images,
 	id: state.collections.currentCollection.id,
 	title: state.collections.currentCollection.title,
-	description: state.collections.currentCollection.description
+	description: state.collections.currentCollection.description,
+	firstImage: state.collections.currentCollection.firstImage
 });
 
 const mapDispatchtoProps = dispatch => ({

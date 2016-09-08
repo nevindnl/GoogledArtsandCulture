@@ -14,6 +14,9 @@ const ImagesReducer = (state = {images: [], currentImage: {id: 0, title: '', des
     case ImagesActions.RECEIVE_FAVORITE:
       newState.currentImage.favorited = !newState.currentImage.favorited;
       return newState;
+    case ImagesActions.RECEIVE_SEARCHED_IMAGES:
+      debugger;
+      return newState;
     default:
       return state;
   }

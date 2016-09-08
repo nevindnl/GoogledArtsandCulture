@@ -6,7 +6,9 @@ export const ImagesActions = {
   RECEIVE_CURRENT_IMAGE: 'RECEIVE_CURRENT_IMAGE',
   RECEIVE_IMAGES: 'RECEIVE_IMAGES',
   TOGGLE_FAVORITE: 'TOGGLE_FAVORITE',
-  RECEIVE_FAVORITE: 'RECEIVE_FAVORITE'
+  RECEIVE_FAVORITE: 'RECEIVE_FAVORITE',
+  SEARCH_IMAGES: 'SEARCH_IMAGES',
+  RECEIVE_SEARCHED_IMAGES: 'RECEIVE_SEARCHED_IMAGES'
 };
 
 export const requestImages = () => ({
@@ -44,4 +46,15 @@ export const toggleFavorite = id => ({
 
 export const receiveFavorite = () => ({
   type: ImagesActions.RECEIVE_FAVORITE
+});
+
+export const searchImages = (word, page) => ({
+  type: ImagesActions.SEARCH_IMAGES,
+  word,
+  page
+});
+
+export const receiveSearchedImages = data => ({
+  type: ImagesActions.RECEIVE_SEARCHED_IMAGES,
+  data
 });
