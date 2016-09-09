@@ -9,7 +9,7 @@ const mapStatetoProps = (state, ownProps) => ({
 });
 
 const mapDispatchtoProps = dispatch => ({
-  searchImages: (word, page) => dispatch(searchImages(word, page))
+  searchImages: (word, offset) => dispatch(searchImages(word, offset))
 });
 
 export default withRouter(connect(

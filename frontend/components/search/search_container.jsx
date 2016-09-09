@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import Search from './search';
 
 const mapStatetoProps = (state, ownProps) => ({
+  images: state.images.images
 });
 
 const mapDispatchtoProps = dispatch => ({

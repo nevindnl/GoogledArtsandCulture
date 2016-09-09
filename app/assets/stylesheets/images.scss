@@ -2,52 +2,94 @@
   background-color: #f5f5f5;
   padding: 20px 55px 80px 55px;
   margin-top: 0;
-  margin-bottom: 80px;
 
   h3{
     font-size: 20px;
     font-weight: normal;
   }
 
+  span{
+    align-items: center;
+    display: none;
+    justify-content: flex-end;
+  }
+
+  button{
+    vertical-align: center;
+    border-radius: 5px;
+    text-shadow: 0;
+    border: 1px solid black;
+    border: 0;
+    box-shadow: 5px;
+    background-color: #4787ed;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    font-family: 'Roboto';
+
+
+    &:active{
+      background-color: white;
+      color: black;
+      outline: 0;
+      outline-offset: 0;
+      border: 0;
+    }
+  }
+
   .images_container{
     width: 100%;
     position: relative;
+    overflow-y: hidden;
+
+    .image_items{
+  		width: 100%;
+  		box-sizing: border-box;
+  		margin: 0;
+      margin: auto;
+
+      &.collecting{
+        img{
+          opacity: .2;
+        }
+
+        li{
+          &.collected{
+            img{
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+  		li{
+        img{
+          float: left;
+        	position: relative;
+          height: 200px;
+          margin: 0.2%;
+          padding: 0;
+        }
+  		}
+    }
   }
 
-  .fillerBox {
-    display: none;
-  	background-color: white;
-  	float: left;
-  	position: relative;
-  }
-
-  ul{
-		width: 100%;
-		box-sizing: border-box;
-		margin: 0;
+  .scroll{
+    margin-top: 20px;
+    opacity: .5;
+    height: 50px;
     width: 100%;
-    margin: auto;
-
-		li{
-    	float: left;
-    	position: relative;
-      margin: 0.2%;
-      padding: 0;
-      width: 19.6%;
-      min-width: 200px;
-		}
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    display: none;
 
     img{
-      width: 96%;
-			margin: 0;
-      padding: 0;
-    }
-
-    .collected{
-      img{
-        background-color: #540404;
-        border-radius: 5px;
-      }
+      height: 50px;
+      width: 50px;
+      margin: auto;
+      opacity: 1;
     }
   }
 }

@@ -1,18 +1,7 @@
 .search_bar{
-  &.visible{
-    .blanket{
-      display: block;
-    }
-
-    .search_header{
-      transform: translateY(55px);
-      transition: transform ease 450ms;
-    }
-  }
-
   .blanket{
     background-color: black;
-    z-index: 2;
+    z-index: 5;
     opacity: .5;
     position: fixed;
     margin-top: 55px;
@@ -21,16 +10,24 @@
     padding: 0;
     margin: 0;
     display: none;
+
+    &.visible{
+      display: block;
+    }
   }
 
-
   .search_header{
+    &.visible{
+      transform: translateY(55px);
+      transition: transform ease 450ms;
+    }
+
     align-items: center;
     top: -55px;
     height: 50px;
     padding-top: 5px;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15);
-    z-index: 3;
+    z-index: 6;
     position: absolute;
     background-color: #4787ed;
     opacity: 1;
@@ -71,6 +68,7 @@
       color: #424242;
       margin-bottom: 6px;
       width: 95%;
+      padding: 10px 0;
 
       &:focus{
         border: 0;

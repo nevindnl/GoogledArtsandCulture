@@ -70,11 +70,18 @@
       background-color: #4d90fe;
       background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
     }
+
+    .demo_login{
+      border: 1px solid #34b03d;
+      background-color: #33e73f;
+      background-image: -webkit-linear-gradient(top,#33e73f,#2bc936);
+    }
   }
 
   .errors{
     width: 100%;
     margin: 0;
+    margin-bottom: 20px;
 
     &.invisible{
       display: none;

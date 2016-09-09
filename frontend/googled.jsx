@@ -18,9 +18,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ReactDOM.render(<Root store={store}/>, root);
 });
-
-// auth: validation errors
-// auth: demo login
-// change header to respond to path
-// new collection, masonry
-// disabled button new collection

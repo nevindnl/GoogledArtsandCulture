@@ -29,6 +29,24 @@ class AuthForm extends React.Component{
     this.props.login({user: this.state});
   }
 
+  login(e){
+    e.preventDefault();
+    this.props.login({user: this.state});
+  }
+
+  demoLogin(e){
+    e.preventDefault();
+
+    for(let i = 1; i < 16; i++){
+      window.setTimeout(() => this.setState({username: 'leonardoDaVinci'.slice(0, i)}), 100 * i);
+    }
+    for(let i = 1; i < 9; i++){
+      window.setTimeout(() => this.setState({password: 'florence'.slice(0, i)}), 1500 + 100 * i);
+    }
+
+    window.setTimeout(() => this.props.login({user: this.state}), 3000);
+  }
+
   render(){
     const errors = this.props.errors.map((error, i) => (
       <li key={i}>
@@ -46,6 +64,7 @@ class AuthForm extends React.Component{
           <input type='password' placeholder='Password' value={this.state.password} onChange={this.update('password')}/>
           <button onClick={this.signup.bind(this)}>Sign Up</button>
           <button onClick={this.login.bind(this)}>Login</button>
+          <button className='demo_login' onClick={this.demoLogin.bind(this)}>Demo Login</button>
         </form>
       </div>
     );

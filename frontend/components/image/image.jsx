@@ -11,7 +11,7 @@ class Image extends React.Component{
     $('#zoom').attr('mag-zoom', 'inner');
 
     let $host = $('[mag-thumb="inner"]');
-    $host.mag({zoomMax: 50});
+    $host.mag({zoomMax: 10});
   }
 
   render(){
@@ -29,8 +29,9 @@ class Image extends React.Component{
 
         <div className='image_header'>
           <h1>{this.props.title}</h1>
-          <h4> From {this.props.url}</h4>
-          <h3>{this.props.description}</h3>
+          <a className='url' href={this.props.url}>
+            <h4> From {this.props.url}</h4>
+          </a>
         </div>
       </div>
     );

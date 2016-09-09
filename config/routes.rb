@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
 
-    resources :images, only: [:index]
+    resources :images, only: [:index, :create]
     resources :collections, only: [:index, :create, :destroy, :update]
 
     get 'images/favorites', to: 'images#favorites'
@@ -18,5 +18,6 @@ Rails.application.routes.draw do
     get 'images/:id', to: 'images#show'
 
     post 'images/favorite', to: 'images#favorite'
+    post 'images/search_collection', to: 'images#search_collection'
   end
 end

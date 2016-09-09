@@ -41,12 +41,31 @@ export const toggleFavorite = (id, success, error) => {
   });
 };
 
-export const searchImages = (word, page, success, error) => {
-  $.ajax({
-    type: 'GET',
-    dataType: 'jsonp',
-    contentType: 'application/json',
-    url: `https://cse.google.com:443/cse/publicurl?cx=013556309943456998348:sgy4bdune-u&q=cool&imgSize=xlarge&key=AIzaSyA9CVjoqYmNqRtsnLFhD7DIasKs4aeTfWE&searchtype=image&start=${30 * page}&num=30&as_filetype=png`,
+export const searchImages = (word, offset, success, error) => {
+  $.get({
+    dataType: 'json',
+    url: `https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=${word}&count=30&offset=${offset}&mkt=en-us&safeSearch=Moderate&size=wallpaper`,
+    headers: {
+      'Ocp-Apim-Subscription-Key': '7101766899a04abb817df9c964aec40c'
+    },
+    success,
+    error
+  });
+};
+
+export const createImage = (image, success, error) => {
+  $.post({
+    url: `api/images`,
+    data: {image},
+    success,
+    error
+  });
+};
+
+export const createSearchCollection = (images, success, error) => {
+  $.post({
+    url: `api/images/search_collection`,
+    data: {images},
     success,
     error
   });

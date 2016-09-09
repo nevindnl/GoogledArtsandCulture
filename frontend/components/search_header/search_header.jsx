@@ -11,7 +11,7 @@ class SearchHeader extends React.Component{
 
   _submit(e){
     e.preventDefault();
-    this.props.searchImages(this.state.word, 0);
+    this.props.router.push(`/search/${this.state.word}`);
   }
 
   _update(e){
@@ -19,10 +19,11 @@ class SearchHeader extends React.Component{
   }
 
   _exit(){
-    if (location.pathname.match(/search/)){
+    if (location.hash.match(/search\/[^\/]*\?/) !== null){
       this.props.router.goBack();
     }
-    $('.search_bar').removeClass('visible');
+    $('.blanket').removeClass('visible');
+    $('.search_header').removeClass('visible');
   }
 
   render(){

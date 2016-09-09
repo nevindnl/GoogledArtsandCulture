@@ -35,6 +35,7 @@ class FavoritesHome extends React.Component{
     $('.errors').addClass('invisible');
     $('.images ul').off();
     $('.images ul').on('click', 'li', this.collectImage.bind(this));
+    $('.images ul').addClass('collecting');
   }
 
   collectImage(e){
@@ -87,6 +88,7 @@ class FavoritesHome extends React.Component{
     $('.errors').addClass('invisible');
     $('.images ul').off();
     $('.images ul').on('click', 'li', e => this.props.router.push(`/images/${e.currentTarget.id}`));
+    $('.images ul').removeClass('collecting');
     this.setState(this.defaultState);
   }
 

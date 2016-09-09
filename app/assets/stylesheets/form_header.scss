@@ -4,7 +4,7 @@
   height: 50px;
   padding-top: 5px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15);
-  z-index: 2;
+  z-index: 5;
   position: relative;
   background-color: #4787ed;
   opacity: 1;
@@ -55,7 +55,7 @@
     padding: 10px 15px;
 
 
-    &:disabled{
+    &:active{
       background-color: white;
       color: black;
     }

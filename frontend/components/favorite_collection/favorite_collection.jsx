@@ -43,6 +43,7 @@ class FavoriteCollection extends React.Component{
     $('.favorite_collection').addClass('invisible');
     $('.form_header').addClass('visible');
     $('.errors').addClass('invisible');
+    $('.images ul').addClass('collecting');
   }
 
   collectImage(e){
@@ -95,6 +96,7 @@ class FavoriteCollection extends React.Component{
     $('.images li').removeClass('collected');
     $('.images ul').off();
     $('.errors').addClass('invisible');
+    $('.images ul').removeClass('collecting');
 
     this.setState(this.defaultState);
     this.props.requestCurrentCollection(this.props.id);

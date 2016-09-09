@@ -1,7 +1,7 @@
 import {CollectionsActions} from '../actions/collections_actions';
 import {merge} from 'lodash';
 
-const CollectionsReducer = (state = {collections: [], errors: [], currentCollection: {id: 0, title: '', description: '', firstImage: {id: 0, title: '', description: '', url: ''}}}, action) => {
+const CollectionsReducer = (state = {collections: [], errors: [], currentCollection: {id: 0, title: '', description: '', firstImage: {id: 0, title: '', description: '', thumbUrl: '', url: ''}}}, action) => {
   const newState = merge({}, state);
 
   switch(action.type){
@@ -19,8 +19,6 @@ const CollectionsReducer = (state = {collections: [], errors: [], currentCollect
     case CollectionsActions.RECEIVE_COLLECTION_ERRORS:
       newState.errors = action.errors.responseJSON;
       return newState;
-    // case CollectionsActions.RECEIVE_SEARCHED_COLLECTIONS:
-    //   return newState;
     default:
       return state;
   }

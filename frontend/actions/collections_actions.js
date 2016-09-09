@@ -62,13 +62,3 @@ export const receiveCollectionErrors = errors => ({
   type: CollectionsActions.RECEIVE_COLLECTION_ERRORS,
   errors
 });
-
-// export const searchCollections = word => ({
-//   type: CollectionsActions.SEARCH_COLLECTIONS,
-//   word
-// });
-//
-// export const receiveSearchedCollections = data => ({
-//   type: CollectionsActions.RECEIVE_SEARCHED_COLLECTIONS,
-//   data
-// });

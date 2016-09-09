@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 import Image from './image';
 
 const mapStatetoProps = state => ({
-	id: state.images.currentImage.id,
 	title: state.images.currentImage.title,
 	description: state.images.currentImage.description,
 	url: state.images.currentImage.url

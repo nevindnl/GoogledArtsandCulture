@@ -31,10 +31,6 @@ const CollectionsMiddleware = ({getState, dispatch}) => next => action => {
     case CollectionsActions.DELETE_COLLECTION:
       CollectionsAPI.deleteCollection(action.id, errors);
       return next(action);
-    // case CollectionsActions.SEARCH_COLLECTIONS:
-    //   success = data => dispatch(receiveSearchedCollections(data));
-    //   CollectionsAPI.searchCollections(action.word, success);
-    //   return next(action);
     default:
       return next(action);
   }

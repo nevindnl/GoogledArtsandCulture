@@ -1,11 +1,9 @@
 class Collection < ActiveRecord::Base
-  validates :title, length: {minimum: 2, maximum: 150}
+  validates :title, length: {minimum: 1, maximum: 150}
   validates :description, length: {maximum: 800}
   validates :title, uniqueness: {scope: :user_id, message: 'has already been used'}
 
   has_many :collected_images, dependent: :destroy
   has_many :images, through: :collected_images
-  has_many :taggings, as: :taggable
-  has_many :tags, through: :taggings
   belongs_to :user
 end

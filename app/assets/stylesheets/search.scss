@@ -1,0 +1,30 @@
+.search_results{
+  position: relative;
+
+  h3{
+    font-weight: 300;
+  }
+
+  .scroll{
+    display: flex;
+  }
+
+  .images{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    h3{
+      width: 50%;
+    }
+
+    span{
+      display: flex;
+      width: 50%;
+    }
+
+    .image_items{
+      width: 100%;
+    }
+  }
+}

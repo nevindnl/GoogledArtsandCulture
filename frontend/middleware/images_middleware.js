@@ -1,4 +1,5 @@
-import {ImagesActions, receiveImages, receiveCurrentImage, receiveFavorite, receiveSearchedImages} from '../actions/images_actions';
+import {ImagesActions, receiveImages, receiveCurrentImage, receiveFavorite, receiveSearchedImages, addSearchedImages} from '../actions/images_actions';
+import {createCollection} from '../actions/collections_actions';
 import * as ImagesAPI from '../util/images_api_util';
 
 const ImagesMiddleware = ({getState, dispatch}) => next => action => {
@@ -18,13 +19,25 @@ const ImagesMiddleware = ({getState, dispatch}) => next => action => {
       success = image => dispatch(receiveCurrentImage(image));
       ImagesAPI.requestCurrentImage(action.id, success);
       return next(action);
+    case ImagesActions.CREATE_IMAGE:
+      success = image => dispatch(receiveCurrentImage(image));
+      ImagesAPI.createImage(action.image, success);
+      return next(action);
     case ImagesActions.TOGGLE_FAVORITE:
       success = () => dispatch(receiveFavorite());
       ImagesAPI.toggleFavorite(action.id, success);
       return next(action);
     case ImagesActions.SEARCH_IMAGES:
       success = data => dispatch(receiveSearchedImages(data));
-      ImagesAPI.searchImages(action.word, action.page, success);
+      ImagesAPI.searchImages(action.word, action.offset, success);
+      return next(action);
+    case ImagesActions.SEARCH_MORE_IMAGES:
+      success = data => dispatch(addSearchedImages(data));
+      ImagesAPI.searchImages(action.word, action.offset, success);
+      return next(action);
+    case ImagesActions.CREATE_SEARCH_COLLECTION:
+      success = collectedImages => dispatch(createCollection({collection: {title: action.title}},{collectedImages}));
+      ImagesAPI.createSearchCollection(action.images, success);
       return next(action);
     default:
       return next(action);

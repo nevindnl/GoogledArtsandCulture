@@ -62,13 +62,3 @@ export const deleteCollection = (id, error) => {
     error
   });
 };
-
-// export const searchCollections = (word, success, error) => {
-//   $.ajax({
-//     type: 'GET',
-//     url: ``,
-//     data: {word}.
-//     success,
-//     error
-//   });
-// };

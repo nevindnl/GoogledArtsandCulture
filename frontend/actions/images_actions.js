@@ -8,7 +8,11 @@ export const ImagesActions = {
   TOGGLE_FAVORITE: 'TOGGLE_FAVORITE',
   RECEIVE_FAVORITE: 'RECEIVE_FAVORITE',
   SEARCH_IMAGES: 'SEARCH_IMAGES',
-  RECEIVE_SEARCHED_IMAGES: 'RECEIVE_SEARCHED_IMAGES'
+  RECEIVE_SEARCHED_IMAGES: 'RECEIVE_SEARCHED_IMAGES',
+  CREATE_IMAGE: 'CREATE_IMAGE',
+  SEARCH_MORE_IMAGES: 'SEARCH_MORE_IMAGES',
+  ADD_SEARCHED_IMAGES: 'ADD_SEARCHED_IMAGES',
+  CREATE_SEARCH_COLLECTION: 'CREATE_SEARCH_COLLECTION'
 };
 
 export const requestImages = () => ({
@@ -48,13 +52,35 @@ export const receiveFavorite = () => ({
   type: ImagesActions.RECEIVE_FAVORITE
 });
 
-export const searchImages = (word, page) => ({
+export const searchImages = (word, offset) => ({
   type: ImagesActions.SEARCH_IMAGES,
   word,
-  page
+  offset
+});
+
+export const searchMoreImages = (word, offset) => ({
+  type: ImagesActions.SEARCH_MORE_IMAGES,
+  word,
+  offset
 });
 
 export const receiveSearchedImages = data => ({
   type: ImagesActions.RECEIVE_SEARCHED_IMAGES,
   data
+});
+
+export const addSearchedImages = data => ({
+  type: ImagesActions.ADD_SEARCHED_IMAGES,
+  data
+});
+
+export const createImage = image => ({
+  type: ImagesActions.CREATE_IMAGE,
+  image
+});
+
+export const createSearchCollection = (title, images) => ({
+  type: ImagesActions.CREATE_SEARCH_COLLECTION,
+  title,
+  images
 });

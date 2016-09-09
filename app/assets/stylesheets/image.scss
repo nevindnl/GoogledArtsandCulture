@@ -1,19 +1,29 @@
+.mag-zone{
+	margin-top: 0;
+}
+
+#thumb{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
 .image{
 	text-align: center;
 
   img{
-    height: 700px;
+		min-height: 400px;
+		max-height: 700px;
 		width: auto;
-		margin: auto;
-		margin-bottom: 50px;
+		margin: 0 auto;
   }
 
 	.image_zoom{
 		position: relative;
+		vertical-align: center;
 	}
 
   .image_header{
-    padding: 10px 0;
+		padding-top: 40px;
     padding-bottom: 60px;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -35,14 +45,19 @@
     width: 50%;
 	}
 
-  h4{
-    font-size: 14px;
-		font-weight: 300;
-		margin-bottom: 10px;
-		color: #333;
-    text-align: right;
-    width: 50%;
-  }
+	.url{
+		text-decoration: none;
+		width: 50%;
+
+		h4{
+			float: right;
+	    font-size: 14px;
+			font-weight: 300;
+			margin-bottom: 10px;
+			color: #333;
+	    text-align: right;
+	  }
+	}
 
 	h3{
     font-size: 14px;
