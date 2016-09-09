@@ -21,7 +21,11 @@
     border: 1px solid black;
     border: 0;
     box-shadow: 5px;
-    background-color: #4787ed;
+		border: 1px solid #723a76;
+		color: #fff;
+		text-shadow: 0 1px rgba(0,0,0,0.1);
+		background-color: #933D99;
+		background-image: -webkit-linear-gradient(top,#933D99,#78337c);
     color: white;
     padding: 10px;
     font-size: 14px;

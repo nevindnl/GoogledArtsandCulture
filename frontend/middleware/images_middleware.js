@@ -36,7 +36,7 @@ const ImagesMiddleware = ({getState, dispatch}) => next => action => {
       ImagesAPI.searchImages(action.word, action.offset, success);
       return next(action);
     case ImagesActions.CREATE_SEARCH_COLLECTION:
-      success = collectedImages => dispatch(createCollection({collection: {title: action.title}},{collectedImages}));
+      success = collectedImages => dispatch(createCollection({collection: {title: action.title, description: ''}},{collectedImages}));
       ImagesAPI.createSearchCollection(action.images, success);
       return next(action);
     default:

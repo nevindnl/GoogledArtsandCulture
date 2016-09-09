@@ -62,8 +62,8 @@ class AuthForm extends React.Component{
         <form>
           <input type='text' placeholder='Username' value={this.state.username} onChange={this.update('username')}/>
           <input type='password' placeholder='Password' value={this.state.password} onChange={this.update('password')}/>
+					<button onClick={this.login.bind(this)}>Login</button>
           <button onClick={this.signup.bind(this)}>Sign Up</button>
-          <button onClick={this.login.bind(this)}>Login</button>
           <button className='demo_login' onClick={this.demoLogin.bind(this)}>Demo Login</button>
         </form>
       </div>

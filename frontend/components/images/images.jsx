@@ -22,6 +22,8 @@ class Images extends React.Component{
     } else {
       this.props.createSearchCollection(location.hash.match(/search\/(.*)\?/)[1], this.props.images);
       this.props.router.push('/favorites');
+			$('.search_header input').val('');
+			$('.search_header').removeClass('visible');
     }
   }
 

@@ -50,6 +50,7 @@ class AppRouter extends React.Component{
 	}
 
 	_searchImage(nextState, replace){
+		$('.search_header input').val('');
 		$('.search_header').removeClass('visible');
 		$('.blanket').removeClass('visible');
 		$('.header_favorites').removeClass('invisible');

@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../logo/logo';
 
-const Header = ({currentUser, logout, sidebar, currentImage, toggleFavorite, createImage, router}) => {
+const Header = ({currentUser, logout, sidebar, currentImage, toggleFavorite, createImage, hashHistory, router}) => {
   const buttonContent = currentUser ? 'LOGOUT ' + currentUser.username : 'SIGN IN';
   const buttonClick = currentUser ? logout : () => router.push('/addSession');
 
@@ -21,7 +21,7 @@ const Header = ({currentUser, logout, sidebar, currentImage, toggleFavorite, cre
 
   function _favorite(){
     if (!currentUser){
-      router.push('/addSession');
+      router.replace('/addSession');
     } else {
       if (typeof currentImage.id === 'string'){
         createImage(currentImage);

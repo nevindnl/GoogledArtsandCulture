@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
   has_many :images, through: :favorites
   has_many :collections, dependent: :destroy
+  has_many :collected_images, through: :collections
 
   def self.find_by_credentials username, password
     @user = User.find_by_username(username)

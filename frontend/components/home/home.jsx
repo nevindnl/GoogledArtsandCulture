@@ -18,7 +18,7 @@ class Home extends React.Component{
     return (
       <div className='group'>
         <div className='banner'>
-          <img src='http://hd.unsplash.com/photo-1446819981653-4df81911e0a1'></img>
+          <img src='https://hd.unsplash.com/photo-1430508522325-7421aca30dfc'></img>
           <div>
             <Logo />
             <div id='sublogo' onClick={() => this.props.router.push('/')}>Explore images and collections from around the internet.</div>

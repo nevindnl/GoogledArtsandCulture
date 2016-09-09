@@ -23,6 +23,7 @@ class SearchHeader extends React.Component{
       this.props.router.goBack();
     }
     $('.blanket').removeClass('visible');
+		$('.search_header input').val('');
     $('.search_header').removeClass('visible');
   }
 

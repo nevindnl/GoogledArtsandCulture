@@ -7,6 +7,8 @@ class Image extends React.Component{
   }
 
   componentDidMount(){
+		$('.header_favorites').removeClass('invisible');
+		
     $('#thumb').attr('mag-thumb', 'inner');
     $('#zoom').attr('mag-zoom', 'inner');
 
@@ -30,7 +32,7 @@ class Image extends React.Component{
         <div className='image_header'>
           <h1>{this.props.title}</h1>
           <a className='url' href={this.props.url}>
-            <h4> From {this.props.url}</h4>
+            <h4>{this.props.url}</h4>
           </a>
         </div>
       </div>

@@ -2,4 +2,26 @@
   background-color: #2b474b;
   height: 400px;
   width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	color: white;
+	align-items: center;
+	justify-content: center;
+	font-weight: 200;
+
+	div{
+		width: 570px;
+		line-height: 28px;
+	}
+
+	a{
+		color: #10c9d8;
+		text-decoration: none;
+	}
+	img{
+		margin-top: 20px;
+		height: 50px;
+		width: 50px;
+	}
 }
