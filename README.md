@@ -22,7 +22,7 @@ Googled is a full-stack web application inspired by Google's Cultural Institute.
 
   If logged in, a favorite icon is visible in the header that allows the user to favorite or unfavorite an image. If the image was from a search result, favoriting the image commits the image to the database as well. The favorite icon displays the current favorite status of the image by the current user.
 
-  <img src="./image.tiff" width="33%"></img>xs
+  <img src="./image.tiff" width="33%"></img>
 
 ### Favorites
 
