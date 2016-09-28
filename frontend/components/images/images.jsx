@@ -19,6 +19,7 @@ class Images extends React.Component{
 
 		$grid.imagesLoaded().progress(() => {
 			if ($grid.data('packery')) $grid.packery('reloadItems');
+
 			$grid.packery({
 				horizontal: true,
 				itemSelector: '.image_item',
@@ -56,9 +57,6 @@ class Images extends React.Component{
 					<ul className='image_items group'>
 						{imageItems}
 					</ul>
-          <div className='scroll'>
-            <img src='http://www.chrisgans1.com/assets/img/Arrow-Down-icon.png' onClick={() => this.props.searchMoreImages(location.hash.match(/search\/(.*)\?/)[1], this.props.images.length)}></img>
-          </div>
         </div>
       </div>
     );
