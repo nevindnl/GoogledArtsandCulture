@@ -12,7 +12,8 @@ export const ImagesActions = {
   CREATE_IMAGE: 'CREATE_IMAGE',
   SEARCH_MORE_IMAGES: 'SEARCH_MORE_IMAGES',
   ADD_SEARCHED_IMAGES: 'ADD_SEARCHED_IMAGES',
-  CREATE_SEARCH_COLLECTION: 'CREATE_SEARCH_COLLECTION'
+  CREATE_SEARCH_COLLECTION: 'CREATE_SEARCH_COLLECTION',
+	CLEAR_IMAGES: 'CLEAR_IMAGES'
 };
 
 export const requestImages = () => ({
@@ -83,4 +84,8 @@ export const createSearchCollection = (title, images) => ({
   type: ImagesActions.CREATE_SEARCH_COLLECTION,
   title,
   images
+});
+
+export const clearImages = () => ({
+  type: ImagesActions.CLEAR_IMAGES
 });

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => (
   <div className='footer group'>
-		<div>Googled was created by <a href='http://github.com/nevindnl'>Nevin Daniel</a>, using Ruby on Rails and React-Redux.
+		<div>Googled was created by <a href='http://linkedin.com/in/nevindaniel'>Nevin Daniel</a>, using Ruby on Rails, React, and Redux.
 			Googled was inspired by <a href='http://www.google.com/culturalinstitute/beta/u/0/'>Google's Cultural Institute</a>.
 		</div>
 

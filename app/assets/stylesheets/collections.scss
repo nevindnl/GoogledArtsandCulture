@@ -17,6 +17,7 @@
 			height: 300px;
       position: relative;
       margin-bottom: 10px;
+			min-width: 200px;
 
 			display: flex;
 			flex-direction: column;
@@ -28,10 +29,12 @@
     #new_collection{
       border: none;
       background-color: #eee;
+			cursor: pointer;
     }
 
 		img{
 			min-height: 250px;
+			cursor: pointer;
 		}
 
     span{

@@ -15,8 +15,7 @@ class Api::ImagesController < ApplicationController
   def search_collection
     @images = [];
     params[:images].each do |image|
-      image = Image.new(image.last.permit(:title, :description, :url, :thumbUrl))
-      image.save
+      image = Image.create(image.last.permit(:title, :description, :url, :thumbUrl))
       Favorite.create(user_id: current_user.id, image_id: image.id)
       @images.push(image)
     end
@@ -30,10 +29,7 @@ class Api::ImagesController < ApplicationController
   def favorite
     @image = Image.find_by_id(params[:id])
     if current_user.images.include?(@image)
-      @favorite = current_user.favorites.find{|favorite| favorite.image == @image}
-			# @collected_images = current_user.collected_images.select{|collect| collect.image == @image}
-			# @collected_images.each{|collect| collect.destroy}
-      @favorite.destroy
+      current_user.images.delete(@image)
     else
       Favorite.create(user_id: current_user.id, image_id: @image.id)
     end

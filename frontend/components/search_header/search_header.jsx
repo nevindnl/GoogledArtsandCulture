@@ -9,6 +9,11 @@ class SearchHeader extends React.Component{
     };
   }
 
+	componentWillReceiveProps(){
+		const searchPath = location.hash.match(/search\/(\w*)\?/);
+		if (searchPath) this.setState({word: searchPath[1]});
+	}
+
   _submit(e){
     e.preventDefault();
     this.props.router.push(`/search/${this.state.word}`);
@@ -22,6 +27,7 @@ class SearchHeader extends React.Component{
     if (location.hash.match(/search\/[^\/]*\?/) !== null){
       this.props.router.goBack();
     }
+
     $('.blanket').removeClass('visible');
 		$('.search_header input').val('');
     $('.search_header').removeClass('visible');

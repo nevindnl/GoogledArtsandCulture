@@ -1,6 +1,7 @@
 .sidebar{
   background-color:#fefffc;
   position: fixed;
+	top: 0;
   height: 100%;
   left: -300px;
   z-index: 4;
@@ -30,10 +31,12 @@
       width: 25px;
       margin-left: 15px;
       margin-right: 15px;
+			cursor: pointer;
     }
 
     h6{
       font-weight: 400;
+			cursor: pointer;
     }
 
     #sidebar_sidebar{

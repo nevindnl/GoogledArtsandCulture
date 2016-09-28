@@ -8,6 +8,9 @@ const ImagesReducer = (state = {images: [], currentImage: {id: 0, title: '', des
     case ImagesActions.RECEIVE_IMAGES:
       newState.images = action.images;
       return newState;
+    case ImagesActions.CLEAR_IMAGES:
+      newState.images = [];
+      return newState;
     case ImagesActions.RECEIVE_CURRENT_IMAGE:
       newState.currentImage = action.image;
       return newState;

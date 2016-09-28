@@ -1,4 +1,6 @@
 .favorites{
+	padding-top: 55px;
+	
   &.invisible{
     transform: translateY(-55px);
     transition: transform ease 500ms;

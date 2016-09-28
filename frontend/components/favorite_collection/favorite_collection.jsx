@@ -44,6 +44,8 @@ class FavoriteCollection extends React.Component{
     $('.form_header').addClass('visible');
     $('.errors').addClass('invisible');
     $('.images ul').addClass('collecting');
+
+		window.scrollTo(0,0);
   }
 
   collectImage(e){
@@ -65,6 +67,7 @@ class FavoriteCollection extends React.Component{
   _toForm(){
     this.setState({toForm: false});
     $('.new_collection').addClass('visible');
+		window.scrollTo(0,0);
   }
 
   _fromForm(){
@@ -103,6 +106,8 @@ class FavoriteCollection extends React.Component{
     this.props.requestCollection(this.props.id);
 
     $('.images ul').on('click', 'li', e => this.props.router.push(`/images/${e.currentTarget.id}`));
+
+		window.scrollTo(0,0);
   }
 
   _updateForm(property){

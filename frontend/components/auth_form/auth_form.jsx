@@ -38,13 +38,13 @@ class AuthForm extends React.Component{
     e.preventDefault();
 
     for(let i = 1; i < 16; i++){
-      window.setTimeout(() => this.setState({username: 'leonardoDaVinci'.slice(0, i)}), 100 * i);
+      window.setTimeout(() => this.setState({username: 'guest'.slice(0, i)}), 100 * i);
     }
     for(let i = 1; i < 9; i++){
-      window.setTimeout(() => this.setState({password: 'florence'.slice(0, i)}), 1500 + 100 * i);
+      window.setTimeout(() => this.setState({password: 'access'.slice(0, i)}), 600 + 100 * i);
     }
 
-    window.setTimeout(() => this.props.login({user: this.state}), 3000);
+    window.setTimeout(() => this.props.login({user: this.state}), 2000);
   }
 
   render(){

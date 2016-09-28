@@ -36,6 +36,8 @@ class FavoritesHome extends React.Component{
     $('.images ul').off();
     $('.images ul').on('click', 'li', this.collectImage.bind(this));
     $('.images ul').addClass('collecting');
+
+		window.scrollTo(0,0);
   }
 
   collectImage(e){
@@ -57,6 +59,8 @@ class FavoritesHome extends React.Component{
   _toForm(){
     this.setState({toForm: false});
     $('.new_collection').addClass('visible');
+		
+		window.scrollTo(0,0);
   }
 
   _fromForm(){
@@ -90,6 +94,8 @@ class FavoritesHome extends React.Component{
     $('.images ul').on('click', 'li', e => this.props.router.push(`/images/${e.currentTarget.id}`));
     $('.images ul').removeClass('collecting');
     this.setState(this.defaultState);
+
+		window.scrollTo(0,0);
   }
 
   _updateForm(property){

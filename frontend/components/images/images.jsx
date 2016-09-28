@@ -1,5 +1,4 @@
 import React from 'react';
-import Masonry from 'react-masonry-component';
 import ImageItem from './image_item';
 
 class Images extends React.Component{
@@ -9,11 +8,25 @@ class Images extends React.Component{
 
   componentDidMount(){
     if (location.hash.match(/search/) !== null){
-      $('.images ul').on('click', 'li', e => this.props.router.push(`${location.hash.match(/#(.*)\?/)[1]}/${e.currentTarget.id}`));
+      $('.images ul').on('click', 'li', e => this.props.router.push(`${location.hash.match(/#\/(.*)\?/)[1]}/${e.currentTarget.id}`));
     } else {
       $('.images ul').on('click', 'li', e => this.props.router.push(`/images/${e.currentTarget.id}`));
     }
-  }
+	}
+
+	componentDidUpdate(){
+		const $grid = $('.image_items');
+
+		$grid.imagesLoaded().progress(() => {
+			if ($grid.data('packery')) $grid.packery('reloadItems');
+			$grid.packery({
+				horizontal: true,
+				itemSelector: '.image_item',
+				gutter: 10,
+				transitionDuration: '0.8s'
+			});
+		});
+	}
 
   _searchCollect(e){
     e.preventDefault();
@@ -40,9 +53,9 @@ class Images extends React.Component{
           <button onClick={this._searchCollect.bind(this)}>COLLECT</button>
         </span>
         <div className='images_container group'>
-          <ul className='image_items group'>
-            {imageItems}
-          </ul>
+					<ul className='image_items group'>
+						{imageItems}
+					</ul>
           <div className='scroll'>
             <img src='http://www.chrisgans1.com/assets/img/Arrow-Down-icon.png' onClick={() => this.props.searchMoreImages(location.hash.match(/search\/(.*)\?/)[1], this.props.images.length)}></img>
           </div>

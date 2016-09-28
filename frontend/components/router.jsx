@@ -11,7 +11,7 @@ import Collection from './collection/collection_container';
 import Image from './image/image_container';
 import Search from './search/search_container';
 import {clearErrors} from '../actions/session_actions';
-import {requestImages, requestFavoriteImages, requestCollection, requestCurrentImage, receiveCurrentImage, searchImages} from '../actions/images_actions';
+import {clearImages, requestImages, requestFavoriteImages, requestCollection, requestCurrentImage, receiveCurrentImage, searchImages} from '../actions/images_actions';
 import {requestCollections, requestFavoriteCollections, requestCurrentCollection} from '../actions/collections_actions';
 
 class AppRouter extends React.Component{
@@ -44,6 +44,7 @@ class AppRouter extends React.Component{
 	}
 
 	_search(nextState){
+		this.context.store.dispatch(clearImages());
 		this.context.store.dispatch(searchImages(nextState.params.word, 0));
 		$('.search_header').addClass('visible');
 		$('.blanket').removeClass('visible');
@@ -54,10 +55,12 @@ class AppRouter extends React.Component{
 		$('.search_header').removeClass('visible');
 		$('.blanket').removeClass('visible');
 		$('.header_favorites').removeClass('invisible');
-		if (this.context.store.getState().images.images.length === 0){
-			replace(`/search/${nextState.params.word}`);
+
+		const searchImage = this.context.store.getState().images.images.find(image => image.id === nextState.params.id);
+		if (searchImage){
+			this.context.store.dispatch(receiveCurrentImage(searchImage));
 		} else{
-			this.context.store.dispatch(receiveCurrentImage(this.context.store.getState().images.images.find(image => image.id === nextState.params.id)));
+			replace(`/search/${nextState.params.word}`);
 		}
 	}
 
