@@ -7,10 +7,25 @@ class Images extends React.Component{
   }
 
   componentDidMount(){
+		const $grid = $('.image_items');
+		const $container = $('.images_container');
+
+		function infiniteScroll(){
+			const width = $grid.width() - $container.width();
+
+			if (width - $container.scrollLeft() < 100 && this.props.images.length < 150){
+				$container.off();
+				this._search();
+
+				window.setTimeout(() => $container.on('scroll', infiniteScroll.bind(this)), 500);
+			}
+		}
+
     if (location.hash.match(/search/) !== null){
-      $('.images ul').on('click', 'li', e => this.props.router.push(`${location.hash.match(/#\/(.*)\?/)[1]}/${e.currentTarget.id}`));
+      $grid.on('click', 'li', e => this.props.router.push(`${location.hash.match(/#\/(.*)\?/)[1]}/${e.currentTarget.id}`));
+			$container.on('scroll', infiniteScroll.bind(this));
     } else {
-      $('.images ul').on('click', 'li', e => this.props.router.push(`/images/${e.currentTarget.id}`));
+      $grid.on('click', 'li', e => this.props.router.push(`/images/${e.currentTarget.id}`));
     }
 	}
 
@@ -27,6 +42,11 @@ class Images extends React.Component{
 				transitionDuration: '0.8s'
 			});
 		});
+	}
+
+
+	_search(){
+		this.props.searchMoreImages(location.hash.match(/search\/(.*)\?/)[1], this.props.images.length);
 	}
 
   _searchCollect(e){
