@@ -1,6 +1,6 @@
 class Api::CollectionsController < ApplicationController
   def index
-    @collections = Collection.all.take(20)
+    @collections = Collection.all.take(8)
   end
 
   def favorites
