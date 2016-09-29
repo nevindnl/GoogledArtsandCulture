@@ -13,7 +13,7 @@ class Images extends React.Component{
 		function infiniteScroll(){
 			const width = $grid.width() - $container.width();
 
-			if (width - $container.scrollLeft() < 100 && this.props.images.length < 50){
+			if (width - $container.scrollLeft() < 20 && this.props.images.length < 150){
 				$container.off();
 				this._search();
 
