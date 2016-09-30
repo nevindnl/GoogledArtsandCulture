@@ -102,9 +102,8 @@ _submitForm(){
 }
 ```
 
-<img src="./screenshots/new collection 1.png"></img>
-<img src="./screenshots/new collection 2.png"></img>
-<img src="./screenshots/new collection 3.png"></img>
+<img src="./screenshots/new collection 1.png" width="100%"></img>
+<img src="./screenshots/new collection 2.png" width="100%"></img>
 
 
 A set of image search results can be instantly collected with chained AJAX requests to the backend to create a collection and then add to it the images. The full Redux cycle is detailed below.
