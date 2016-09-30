@@ -40,6 +40,7 @@ class FavoriteCollection extends React.Component{
 
     $('.images ul').off();
     $('.images ul').on('click', 'li', this.collectImage.bind(this));
+
     $('.favorite_collection').addClass('invisible');
     $('.form_header').addClass('visible');
     $('.errors').addClass('invisible');
@@ -97,8 +98,10 @@ class FavoriteCollection extends React.Component{
     $('.new_collection').removeClass('visible');
     $('.favorite_collection').removeClass('invisible');
     $('.images li').removeClass('collected');
+		$('.errors').addClass('invisible');
+
     $('.images ul').off();
-    $('.errors').addClass('invisible');
+		
     $('.images ul').removeClass('collecting');
 
     this.setState(this.defaultState);

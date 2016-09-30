@@ -16,8 +16,8 @@ class Api::ImagesController < ApplicationController
     @images = [];
     params[:images].each do |image|
       image = Image.create(image.last.permit(:title, :description, :url, :thumbUrl))
-      Favorite.create(user_id: current_user.id, image_id: image.id)
-      @images.push(image)
+      current_user.images << image
+      @images << image
     end
     render json: @images.map(&:id)
   end
@@ -27,8 +27,8 @@ class Api::ImagesController < ApplicationController
   end
 
   def favorite
-    @image = Image.find_by_id(params[:id])
-    if current_user.images.include?(@image)
+    @image = current_user.images.where(id: params[:id])
+    if @image
       current_user.images.delete(@image)
     else
       Favorite.create(user_id: current_user.id, image_id: @image.id)

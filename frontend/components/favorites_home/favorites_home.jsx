@@ -33,8 +33,10 @@ class FavoritesHome extends React.Component{
     $('.favorites').addClass('invisible');
     $('.form_header').addClass('visible');
     $('.errors').addClass('invisible');
+
     $('.images ul').off();
     $('.images ul').on('click', 'li', this.collectImage.bind(this));
+
     $('.images ul').addClass('collecting');
 
 		window.scrollTo(0,0);
@@ -59,7 +61,7 @@ class FavoritesHome extends React.Component{
   _toForm(){
     this.setState({toForm: false});
     $('.new_collection').addClass('visible');
-		
+
 		window.scrollTo(0,0);
   }
 
@@ -90,9 +92,12 @@ class FavoritesHome extends React.Component{
     $('.favorites').removeClass('invisible');
     $('.images li').removeClass('collected');
     $('.errors').addClass('invisible');
+
     $('.images ul').off();
     $('.images ul').on('click', 'li', e => this.props.router.push(`/images/${e.currentTarget.id}`));
+
     $('.images ul').removeClass('collecting');
+		
     this.setState(this.defaultState);
 
 		window.scrollTo(0,0);
