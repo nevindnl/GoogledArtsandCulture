@@ -1117,4 +1117,4 @@
   }
 
   return Magnificent
-}))
+}));

@@ -244,7 +244,7 @@
   }
 
   // return Mag
-}))
+}));
 
 // const Mag = 'mag';
 // export default Mag;
