@@ -4,12 +4,9 @@
 
 [heroku]: http://googled.space
 
-Googled is a full-stack web application inspired by Google's Cultural Institute.  It uses a PostgreSQL database, Ruby on Rails on the backend, and React with a Redux architectural framework on the frontend.  
+Googled is a web application inspired by Google's Cultural Institute. The stack is a PostgreSQL database, a Ruby on Rails backend, and a React (with a Redux architectural framework) frontend.  
 
-<img src="./screenshots/splash 1.png"></img>
-<img src="./screenshots/splash 2.png"></img>
-<img src="./screenshots/splash 3.png"></img>
-<img src="./screenshots/splash 4.png"></img>
+<img src="./screenshots/splash.png width="100%"></img>
 
 ## Features & Implementation
 
@@ -27,13 +24,11 @@ If logged in, a favorite icon is visible in the header that allows the user to f
 
 <img src="./screenshots/image 1.png"></img>
 <img src="./screenshots/image 2.png"></img>
-
 ### Favorites
 
 Users and images are stored in different tables in the database, and a favorites join table connects the two. Upon navigation to the favorites page, an API call is made to request a user's favorites.
 
-<img src="./screenshots/favorites 1.png" width="100%"></img>
-<img src="./screenshots/favorites 2.png" width="100%"></img>
+<img src="./screenshots/favorites.png" width="100%"></img>
 
 ### Collections
 
@@ -41,15 +36,9 @@ Favorited images can be collected into collections. Images and collections are s
 
 Upon navigation to the user's favorites page, an API call is made to request the user's collections. Upon navigation to a collection's page, an API call is made to request the collection's images. For collection icons, the API call requests one image at random from each collection's images.
 
-<img src="./screenshots/collection 1.png"></img>
-<img src="./screenshots/collection 2.png"></img>
+<img src="./screenshots/collection.png" width="100%"></img>
 
 Collections can be created, read, updated, and destroyed. Creation and update forms do not redirect to new routes or components, but are revealed and hidden using semantic HTML5, CSS selectors, and jQuery.
-
-<img src="./screenshots/new collection 1.png"></img>
-<img src="./screenshots/new collection 2.png"></img>
-<img src="./screenshots/new collection 3.png"></img>
-<img src="./screenshots/new collection 4.png"></img>
 
 ```Javascript
 collectImages(){
@@ -112,6 +101,11 @@ _submitForm(){
   $('.errors').removeClass('invisible');
 }
 ```
+
+<img src="./screenshots/new collection 1.png"></img>
+<img src="./screenshots/new collection 2.png"></img>
+<img src="./screenshots/new collection 3.png"></img>
+
 
 A set of image search results can be instantly collected with chained AJAX requests to the backend to create a collection and then add to it the images. The full Redux cycle is detailed below.
 
@@ -188,7 +182,7 @@ end
 
 Users can sign up, login, and logout. Passwords are encrypted with BCrypt. Backend authentication uses session tokens. A logged-in user is communicated to the frontend by bootstrapping the user to the window, then preloading the frontend store with the user or null.
 
-<img src="./screenshots/auth_form.png"></img>
+<img src="./screenshots/auth form.png"></img>
 
 #### Responsive design
 
