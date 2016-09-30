@@ -6,7 +6,7 @@
 
 Googled is a web application inspired by Google's Cultural Institute. The stack is a PostgreSQL database, a Ruby on Rails backend, and a React (with a Redux architectural framework) frontend.  
 
-<img src="./screenshots/splash.png width="100%"></img>
+<img src="./screenshots/splash.png" width="100%"></img>
 
 ## Features & Implementation
 
