@@ -184,6 +184,7 @@ Users can sign up, login, and logout. Passwords are encrypted with BCrypt. Backe
 
 <img src="./screenshots/auth form.png"></img>
 
+---
 #### Responsive design
 
 Packery was used to responsively format and animate images.
