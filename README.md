@@ -106,29 +106,59 @@ _submitForm(){
 <img src="./screenshots/new collection 2.png" width="100%"></img>
 
 
-A set of image search results can be instantly collected with chained AJAX requests to the backend to create a collection and then add to it the images. The full Redux cycle is detailed below.
+A set of image search results can be instantly collected with chained AJAX requests. The full Redux cycle is detailed below.
 
 ```Javascript
 // action is dispatched
-  _searchCollect(e){
-    e.preventDefault();
-    if(!this.props.currentUser){
-      this.props.router.push('/addSession');
-    } else {
-      this.props.createSearchCollection(location.hash.match(/search\/(.*)\?/)[1], this.props.images);
-      this.props.router.push('/favorites');
-      $('.search_header input').val('');
-      $('.search_header').removeClass('visible');
-    }
+_searchCollect(e){
+  e.preventDefault();
+  if(!this.props.currentUser){
+    this.props.router.push('/addSession');
+  } else {
+    this.props.createSearchCollection(location.hash.match(/search\/(.*)\?/)[1], this.props.images);
+    this.props.router.push('/favorites');
+    $('.search_header input').val('');
+    $('.search_header').removeClass('visible');
   }
+}
 
+// action hits images middleware
+case ImagesActions.CREATE_SEARCH_COLLECTION:
+	success = collectedImages => dispatch(createCollection({collection: {title: action.title, description: ''}},{collectedImages}));
+	ImagesAPI.createSearchCollection(action.images, success);
+	return next(action);
+
+// first ajax request to images API
+export const createSearchCollection = (images, success, error) => {
+  $.post({
+    url: `api/images/search_collection`,
+    data: {images},
+    success,
+    error
+  });
+};
+```
+```Ruby
+# images controller posts images to the database
+def search_collection
+	@images = [];
+	params[:images].each do |image|
+		image = Image.create(image.last.permit(:title, :description, :url, :thumbUrl))
+		current_user.images << image
+		@images << image
+	end
+	render json: @images.map(&:id)
+end
+```
+
+```Javascript
 // action hits collections middleware
-  case CollectionsActions.CREATE_COLLECTION:
-    success = (collection => dispatch(receiveCollection(collection)));
-    CollectionsAPI.createCollection(action.collection, action.collectedImages, success, errors);
-    return next(action);
+case CollectionsActions.CREATE_COLLECTION:
+  success = (collection => dispatch(receiveCollection(collection)));
+  CollectionsAPI.createCollection(action.collection, action.collectedImages, success, errors);
+  return next(action);
 
-// ajax requests made to API
+// ajax requests to collections and collected_images APIs
 export const createCollection = (collection, collectedImages, success, error) => {
   $.post({
     url: 'api/collections/',
@@ -146,7 +176,7 @@ export const createCollection = (collection, collectedImages, success, error) =>
 ```
 
 ```Ruby
-# collections controller receives first request
+# collections controller creates a new collection
 def create
 	@collection = Collection.new(collection_params)
 	@collection.user_id = current_user.id
@@ -157,7 +187,7 @@ def create
 	end
 end
 
-# collected_images controller receives second request
+# collected_images controller adds the images to the new collection
 def collect
 	@collection = Collection.last
 	if params[:collectedImages]
