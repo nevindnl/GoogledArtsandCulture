@@ -4,7 +4,7 @@
 
 [heroku]: http://googled.space
 
-Googled is a web application inspired by Google's Cultural Institute. The stack is a PostgreSQL database, a Ruby on Rails backend, and a React (with a Redux architectural framework) frontend.  
+Googled is a web application inspired by [Google's Cultural Institute](http://www.google.com/culturalinstitute/beta/u/0/). The stack is a PostgreSQL database, a Ruby on Rails backend, and a React (with a Redux architectural framework) frontend.  
 
 <img src="./screenshots/splash.png" width="100%"></img>
 
@@ -141,13 +141,13 @@ export const createSearchCollection = (images, success, error) => {
 ```Ruby
 # images controller posts images to the database
 def search_collection
-	@images = [];
-	params[:images].each do |image|
-		image = Image.create(image.last.permit(:title, :description, :url, :thumbUrl))
-		current_user.images << image
-		@images << image
-	end
-	render json: @images.map(&:id)
+  @images = [];
+  params[:images].each do |image|
+    image = Image.create(image.last.permit(:title, :description, :url, :thumbUrl))
+    current_user.images << image
+    @images << image
+  end
+  render json: @images.map(&:id)
 end
 ```
 
@@ -178,24 +178,24 @@ export const createCollection = (collection, collectedImages, success, error) =>
 ```Ruby
 # collections controller creates a new collection
 def create
-	@collection = Collection.new(collection_params)
-	@collection.user_id = current_user.id
-	if @collection.save
-		render 'api/collections/show'
-	else
-		render json: @collection.errors.full_messages, status: 422
-	end
+  @collection = Collection.new(collection_params)
+  @collection.user_id = current_user.id
+  if @collection.save
+    render 'api/collections/show'
+  else
+    render json: @collection.errors.full_messages, status: 422
+  end
 end
 
 # collected_images controller adds the images to the new collection
 def collect
-	@collection = Collection.last
-	if params[:collectedImages]
-		params[:collectedImages].each do |image_id|
-			CollectedImage.create(image_id: image_id, collection_id: @collection.id)
-		end
-	end
-	render 'api/collections/show'
+  @collection = Collection.last
+  if params[:collectedImages]
+    params[:collectedImages].each do |image_id|
+      CollectedImage.create(image_id: image_id, collection_id: @collection.id)
+    end
+  end
+  render 'api/collections/show'
 end
 ```
 
