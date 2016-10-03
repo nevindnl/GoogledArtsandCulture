@@ -216,7 +216,7 @@ Users can sign up, login, and logout. Passwords are encrypted with BCrypt. Backe
 ---
 #### Responsive design
 
-Packery was used to responsively format and animate images.
+Packery responsively formats and animates images.
 
 <img src="./screenshots/packery 1.png"></img>
 <img src="./screenshots/packery 2.png"></img>
