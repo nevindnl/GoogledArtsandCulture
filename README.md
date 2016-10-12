@@ -4,7 +4,7 @@
 
 [heroku]: http://googled.space
 
-Googled is a web application inspired by [Google's Cultural Institute](http://www.google.com/culturalinstitute/beta/u/0/). The stack is a PostgreSQL database, a Ruby on Rails backend, and a React (with a Redux architectural framework) frontend.  
+Googled is a web application inspired by [Google's Cultural Institute](http://www.google.com/culturalinstitute/beta/u/0/). The stack is a PostgreSQL database, a Ruby on Rails backend, and a React/Redux frontend.  
 
 <img src="./screenshots/splash.png" width="100%"></img>
 
@@ -20,7 +20,7 @@ Search requests are made through the Bing Image Search API (it was cheaper) and 
 
 Upon navigation to an image, the store records the image in the frontend store as the `currentImage` and the full image is loaded. Magnificent.js was used to implement pan and zoom.
 
-If logged in, a favorite icon is visible in the header that allows the user to favorite or unfavorite an image. If the image was from a search result, favoriting the image commits the image to the database.
+If logged in, a favorite icon is visible in the header that allows the user to favorite or unfavorite an image. If the image is from a search result, favoriting the image commits the image to the database.
 
 <img src="./screenshots/image 1.png"></img>
 <img src="./screenshots/image 2.png"></img>
